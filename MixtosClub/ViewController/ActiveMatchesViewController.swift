@@ -39,6 +39,7 @@ class ActiveMatchesViewController: UIViewController {
     }
     
     @IBAction func tapParticipate(_ sender: Any) {
+        print("PARTICIPAR")
     }
     
     private func initialState() {
