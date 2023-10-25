@@ -15,6 +15,11 @@
 		51082D912AE051C5007557C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51082D8F2AE051C5007557C1 /* LaunchScreen.storyboard */; };
 		51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082D982AE06DCC007557C1 /* HomeViewController.swift */; };
 		51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */; };
+		51082DA12AE5E015007557C1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51082DA02AE5E015007557C1 /* Alamofire */; };
+		51082DA42AE5E050007557C1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082DA32AE5E050007557C1 /* Provider.swift */; };
+		51707BE32AE5F42000722645 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE22AE5F42000722645 /* Players.swift */; };
+		51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */; };
+		51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,10 @@
 		51082D922AE051C5007557C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51082D982AE06DCC007557C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMatchesViewController.swift; sourceTree = "<group>"; };
+		51082DA32AE5E050007557C1 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		51707BE22AE5F42000722645 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
+		51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51082DA12AE5E015007557C1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +70,9 @@
 		51082D832AE051C2007557C1 /* MixtosClub */ = {
 			isa = PBXGroup;
 			children = (
+				51707BE42AE69D7900722645 /* Helper */,
+				51082DA52AE5E0C5007557C1 /* Model */,
+				51082DA22AE5E036007557C1 /* Provider */,
 				51082D9A2AE06DFF007557C1 /* ViewController */,
 				51082D842AE051C2007557C1 /* AppDelegate.swift */,
 				51082D862AE051C2007557C1 /* SceneDelegate.swift */,
@@ -77,8 +90,33 @@
 				51082D882AE051C2007557C1 /* LoginViewController.swift */,
 				51082D982AE06DCC007557C1 /* HomeViewController.swift */,
 				51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */,
+				51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		51082DA22AE5E036007557C1 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				51082DA32AE5E050007557C1 /* Provider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		51082DA52AE5E0C5007557C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51707BE22AE5F42000722645 /* Players.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51707BE42AE69D7900722645 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +135,9 @@
 			dependencies = (
 			);
 			name = MixtosClub;
+			packageProductDependencies = (
+				51082DA02AE5E015007557C1 /* Alamofire */,
+			);
 			productName = MixtosClub;
 			productReference = 51082D812AE051C2007557C1 /* MixtosClub.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 51082D782AE051C2007557C1;
+			packageReferences = (
+				51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 51082D822AE051C2007557C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,8 +198,12 @@
 			files = (
 				51082D892AE051C2007557C1 /* LoginViewController.swift in Sources */,
 				51082D852AE051C2007557C1 /* AppDelegate.swift in Sources */,
+				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
+				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
 				51082D872AE051C2007557C1 /* SceneDelegate.swift in Sources */,
+				51707BE32AE5F42000722645 /* Players.swift in Sources */,
 				51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */,
+				51082DA42AE5E050007557C1 /* Provider.swift in Sources */,
 				51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51082DA02AE5E015007557C1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51082D792AE051C2007557C1 /* Project object */;
 }

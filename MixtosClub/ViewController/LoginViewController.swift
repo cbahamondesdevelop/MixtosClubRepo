@@ -12,13 +12,30 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var loginButtonControl: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var passwordOK = false
     private var userOK = false
+    private var infoUser: Players?
+    private var navigation: UINavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         disableButton()
+        getData()
+    }
+    
+    private func getData() {
+        activityIndicator.startAnimating()
+        Provider.shared.getUsers { user in
+            self.infoUser = user
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityIndicator.stopAnimating()
+        } failure: { error in
+            print(error as Any)
+            self.activityIndicator.hidesWhenStopped = true
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     private func disableButton() {
@@ -62,11 +79,21 @@ class LoginViewController: UIViewController {
         guard let user = userTextField else { return }
         guard let pass = passwordTextField else { return }
         
-        if user.text == "Cristian" && pass.text == "pass1" {
-            let alert = UIAlertController(title: "Login", message: "\(user.text ?? String()), bienvenido a nuestra app", preferredStyle: .alert)
+        if user.text == infoUser?.rut && pass.text == infoUser?.password {
+            let alert = UIAlertController(title: "Login", message: "\(infoUser?.nombre ?? String()), bienvenido a nuestra app", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Vale" , style: .default, handler: { action in
                 switch action.style{
                     case .default:
+                    
+                    Player.shared.nombre = self.infoUser?.nombre ?? String()
+                    Player.shared.apellido = self.infoUser?.apellido ?? String()
+                    Player.shared.password = self.infoUser?.password ?? String()
+                    Player.shared.rut = self.infoUser?.rut ?? String()
+                    Player.shared.email = self.infoUser?.email ?? String()
+                    Player.shared.genero = self.infoUser?.genero ?? String()
+                    Player.shared.perfil = self.infoUser?.perfil ?? String()
+                    Player.shared.telefono = self.infoUser?.telefono ?? String()
+                    
                     self.performSegue(withIdentifier: "segueToHome", sender: user.text)
                     
                     case .cancel:
