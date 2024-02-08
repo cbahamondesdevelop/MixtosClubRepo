@@ -26,15 +26,22 @@ class TextsInTheApp {
     
     
     //MARK: Button
-    let titleButton = "Ingresar"
+    let getIntoButton = "Ingresar"
     let createAccount = "Crear cuenta"
     let detailButton = "Ver detalle"
     let applyFilter = "Aplicar filtro"
+    let participate = "Participar"
+    let seeTeams = "Ver equipos"
+    let iPreferNotToParticipate = "Mejor no participo :("
+    let back = "Volver"
     
     //MARK: Title
     let titleHome = "Mixtos Club"
     let titleAlert = "Aviso"
     let welcome = "Bienvenido"
+    let inscription = "Inscipción"
+    let participants = "Participantes"
+    let equipment = "Equipos"
     
     //MARK: Title Cell
     let titleLabelCell = "Titulo: "
@@ -46,4 +53,5 @@ class TextsInTheApp {
     let emptyDefault = ""
     let initialDateDefault = "2023-01-01"
     let finalDateDefault = "2023-01-02"
+    let zeroDefault = 0
 }

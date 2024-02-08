@@ -82,7 +82,7 @@ class LoginView: UIView {
         button.backgroundColor = .purple
         button.layer.cornerRadius = 5.0
         button.isEnabled = true
-        button.setTitle(textAPP.titleButton, for: .normal)
+        button.setTitle(textAPP.getIntoButton, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         return button

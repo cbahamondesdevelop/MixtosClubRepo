@@ -8,10 +8,14 @@
 import Foundation
 import UIKit
 
+protocol HomeViewDelegate: AnyObject {
+    func tapFirstMatch()
+}
+
 class HomeView: UIView {
     
     let textAPP = TextsInTheApp()
-    //weak var delegate: LoginDelegate?
+    weak var delegate: HomeViewDelegate?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -210,7 +214,7 @@ extension HomeView {
     
     @objc
     func didTapFirstMatch() {
-        print("presione boton 1")
+        delegate?.tapFirstMatch()
     }
     
     @objc

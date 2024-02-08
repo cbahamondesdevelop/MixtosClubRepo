@@ -16,7 +16,7 @@ class NewHomeViewController: UIViewController {
     private lazy var homeView: HomeView = {
         let view = HomeView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.delegate = self
+        view.delegate = self
         return view
     }()
     
@@ -48,4 +48,12 @@ extension NewHomeViewController {
             homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
+}
+
+extension NewHomeViewController: HomeViewDelegate {
+    func tapFirstMatch() {
+        let controller = NewActiveMatchesViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
