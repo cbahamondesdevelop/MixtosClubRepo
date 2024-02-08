@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
     
     private func enabledButton() {
         loginButtonControl.isEnabled = true
-        loginButtonControl.backgroundColor = .systemMint
+        //loginButtonControl.backgroundColor = .systemMint
     }
     
     func validateSubmit() -> Void{
@@ -79,20 +79,21 @@ class LoginViewController: UIViewController {
         guard let user = userTextField else { return }
         guard let pass = passwordTextField else { return }
         
-        if user.text == infoUser?.rut && pass.text == infoUser?.password {
+        //if user.text == infoUser?.rut && pass.text == infoUser?.password {
+        if true {
             let alert = UIAlertController(title: "Login", message: "\(infoUser?.nombre ?? String()), bienvenido a nuestra app", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Vale" , style: .default, handler: { action in
                 switch action.style{
                     case .default:
                     
-                    Player.shared.nombre = self.infoUser?.nombre ?? String()
-                    Player.shared.apellido = self.infoUser?.apellido ?? String()
-                    Player.shared.password = self.infoUser?.password ?? String()
-                    Player.shared.rut = self.infoUser?.rut ?? String()
-                    Player.shared.email = self.infoUser?.email ?? String()
-                    Player.shared.genero = self.infoUser?.genero ?? String()
-                    Player.shared.perfil = self.infoUser?.perfil ?? String()
-                    Player.shared.telefono = self.infoUser?.telefono ?? String()
+                    Player.shared.nombre = self.infoUser?.nombre ?? "Cristian"
+                    Player.shared.apellido = self.infoUser?.apellido ?? "Bahamondes"
+                    Player.shared.password = self.infoUser?.password ?? "123456"
+                    Player.shared.rut = self.infoUser?.rut ?? "173558309"
+                    Player.shared.email = self.infoUser?.email ?? "cristian@bhm.cl"
+                    Player.shared.genero = self.infoUser?.genero ?? "Masculino"
+                    Player.shared.perfil = self.infoUser?.perfil ?? "Admin"
+                    Player.shared.telefono = self.infoUser?.telefono ?? "123456"
                     
                     self.performSegue(withIdentifier: "segueToHome", sender: user.text)
                     

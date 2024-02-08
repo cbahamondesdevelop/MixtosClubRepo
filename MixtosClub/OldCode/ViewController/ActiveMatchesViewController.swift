@@ -81,7 +81,7 @@ class ActiveMatchesViewController: UIViewController {
         btnMejorNoParticipoControl.isEnabled = false
         btnMejorNoParticipoControl.backgroundColor = .gray
         
-        btnVerEquiposControl.isEnabled = false
+        btnVerEquiposControl.isEnabled = true
         btnVerEquiposControl.backgroundColor = .gray
         
         btnParticiparControl.isEnabled = true
