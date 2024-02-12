@@ -17,12 +17,30 @@ class HomeView: UIView {
     let textAPP = TextsInTheApp()
     weak var delegate: HomeViewDelegate?
     
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.backgroundColor = .white
+        //scroll.contentSize = CGSize(width: self.bounds.width, height: 1500)
+        scroll.contentSize = CGSize(width: self.bounds.width, height: adminPanel.frame.origin.y + adminPanel.frame.size.height + 20)
+        return scroll
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = textAPP.titleHome
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 18)
+        return label
+    }()
+    
+    private lazy var activeMatchesLabel: UILabel = {
+        let label = UILabel()
+        label.text = textAPP.activeMatches
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 16.0)
         return label
     }()
     
@@ -89,6 +107,15 @@ class HomeView: UIView {
         return button
     }()
     
+    private lazy var informativeLabel: UILabel = {
+        let label = UILabel()
+        label.text = textAPP.informative
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 16.0)
+        return label
+    }()
+    
     private lazy var pastMatches: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
@@ -131,6 +158,15 @@ class HomeView: UIView {
         return button
     }()
     
+    private lazy var adminLabel: UILabel = {
+        let label = UILabel()
+        label.text = textAPP.adminPanel
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 16.0)
+        return label
+    }()
+    
     private lazy var adminPanel: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
@@ -168,21 +204,43 @@ class HomeView: UIView {
 extension HomeView {
     
     private func buildViewHierarchy() {
-        [titleLabel, firstMatch, secondMatch, thirdMatch, pastMatches, finances, adminPanel].forEach(addSubview)
+        scrollView.addSubview(titleLabel)
+        scrollView.addSubview(activeMatchesLabel)
+        scrollView.addSubview(firstMatch)
+        scrollView.addSubview(secondMatch)
+        scrollView.addSubview(thirdMatch)
+        scrollView.addSubview(informativeLabel)
+        scrollView.addSubview(pastMatches)
+        scrollView.addSubview(finances)
+        scrollView.addSubview(adminLabel)
+        scrollView.addSubview(adminPanel)
+        addSubview(scrollView)
+        //[titleLabel, firstMatch, secondMatch, thirdMatch, pastMatches, finances, adminPanel].forEach(addSubview)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            //scrollView.bottomAnchor.constraint(greaterThanOrEqualTo: adminPanel.bottomAnchor, constant: 20),
+
+            
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            activeMatchesLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
+            activeMatchesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 
-            firstMatch.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            firstMatch.topAnchor.constraint(equalTo: activeMatchesLabel.bottomAnchor, constant: 30),
             firstMatch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             firstMatch.widthAnchor.constraint(equalToConstant: 110),
             firstMatch.heightAnchor.constraint(equalToConstant: 110),
             
-            secondMatch.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            secondMatch.topAnchor.constraint(equalTo: activeMatchesLabel.bottomAnchor, constant: 30),
             secondMatch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             secondMatch.widthAnchor.constraint(equalToConstant: 110),
             secondMatch.heightAnchor.constraint(equalToConstant: 110),
@@ -192,20 +250,26 @@ extension HomeView {
             thirdMatch.widthAnchor.constraint(equalToConstant: 110),
             thirdMatch.heightAnchor.constraint(equalToConstant: 110),
             
-            pastMatches.topAnchor.constraint(equalTo: secondMatch.bottomAnchor, constant: 30),
+            informativeLabel.topAnchor.constraint(equalTo: thirdMatch.bottomAnchor, constant: 40),
+            informativeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            pastMatches.topAnchor.constraint(equalTo: informativeLabel.bottomAnchor, constant: 30),
             pastMatches.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
             pastMatches.widthAnchor.constraint(equalToConstant: 110),
             pastMatches.heightAnchor.constraint(equalToConstant: 110),
             
-            finances.topAnchor.constraint(equalTo: thirdMatch.bottomAnchor, constant: 30),
+            finances.topAnchor.constraint(equalTo: informativeLabel.bottomAnchor, constant: 30),
             finances.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             finances.widthAnchor.constraint(equalToConstant: 110),
             finances.heightAnchor.constraint(equalToConstant: 110),
             
-            adminPanel.topAnchor.constraint(equalTo: pastMatches.bottomAnchor, constant: 30),
-            adminPanel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            adminLabel.topAnchor.constraint(equalTo: finances.bottomAnchor, constant: 40),
+            adminLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            
+            adminPanel.topAnchor.constraint(equalTo: adminLabel.bottomAnchor, constant: 30),
+            adminPanel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             adminPanel.widthAnchor.constraint(equalToConstant: 110),
-            adminPanel.heightAnchor.constraint(equalToConstant: 110),
+            adminPanel.heightAnchor.constraint(equalToConstant: 110)
         ])
     }
 }

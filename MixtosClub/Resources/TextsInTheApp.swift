@@ -42,6 +42,9 @@ class TextsInTheApp {
     let inscription = "Inscipción"
     let participants = "Participantes"
     let equipment = "Equipos"
+    let activeMatches = "Partidos Activos"
+    let informative = "Seccion informativa"
+    let adminPanel = "Panel admin"
     
     //MARK: Title Cell
     let titleLabelCell = "Titulo: "
