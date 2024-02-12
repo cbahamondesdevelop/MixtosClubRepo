@@ -31,26 +31,73 @@ class ActiveMatchesViewController: UIViewController {
         namePlayersTableView.dataSource = self
         initialState()
     }
+    
+    func removePlayer(posIndex:Int) {
+        players?.remove(at: posIndex)
+    }
+    
+    func getIndex(nombre: String) -> Int {
+        var respuesta:Int = 0
+        
+        guard let guardPlayer = players else { return 0 }
+        
+        guardPlayer.forEach { dato in
+            if dato == nombre {
+                if let idPlayer = guardPlayer.firstIndex(of: dato){
+                    respuesta = idPlayer
+                }
+            }
+        }
+        return respuesta
+    }
 
     @IBAction func tapDoNotParticipate(_ sender: Any) {
+        let icon = matchIcon(genero: Player.shared.genero)
+        
+        let find = icon + " " + Player.shared.nombre
+        let id = getIndex(nombre: find)
+        removePlayer(posIndex: id)
+        namePlayersTableView.reloadData()
+        initialState()
     }
     
     @IBAction func tapShowTeams(_ sender: Any) {
     }
     
     @IBAction func tapParticipate(_ sender: Any) {
-        print("PARTICIPAR")
+        let icon = matchIcon(genero: Player.shared.genero)
+        
+        players?.append(icon + " " + Player.shared.nombre)
+        namePlayersTableView.reloadData()
+        
+        btnParticiparControl.isEnabled = false
+        btnParticiparControl.backgroundColor = .gray
+        
+        btnMejorNoParticipoControl.isEnabled = true
+        btnMejorNoParticipoControl.backgroundColor = .systemPink
     }
     
     private func initialState() {
         btnMejorNoParticipoControl.isEnabled = false
         btnMejorNoParticipoControl.backgroundColor = .gray
         
-        btnVerEquiposControl.isEnabled = false
+        btnVerEquiposControl.isEnabled = true
         btnVerEquiposControl.backgroundColor = .gray
         
         btnParticiparControl.isEnabled = true
         btnParticiparControl.backgroundColor = .systemGreen
+    }
+    
+    private func matchIcon(genero: String) -> String {
+        var icon = String()
+        
+        if genero == "Masculino" {
+            icon = "🚹"
+        } else {
+            icon = "🚺"
+        }
+        
+        return icon
     }
 }
 

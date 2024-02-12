@@ -15,6 +15,24 @@
 		51082D912AE051C5007557C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51082D8F2AE051C5007557C1 /* LaunchScreen.storyboard */; };
 		51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082D982AE06DCC007557C1 /* HomeViewController.swift */; };
 		51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */; };
+		51082DA12AE5E015007557C1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51082DA02AE5E015007557C1 /* Alamofire */; };
+		51082DA42AE5E050007557C1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082DA32AE5E050007557C1 /* Provider.swift */; };
+		51707BE32AE5F42000722645 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE22AE5F42000722645 /* Players.swift */; };
+		51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */; };
+		51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */; };
+		51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BEB2AE95E9100722645 /* ShowTeamsViewController.swift */; };
+		51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B842B72B9D5007A5D15 /* LoginView.swift */; };
+		51970B872B72BA09007A5D15 /* TextsInTheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B862B72BA09007A5D15 /* TextsInTheApp.swift */; };
+		51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */; };
+		51970B8C2B731B48007A5D15 /* NewHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B8B2B731B48007A5D15 /* NewHomeViewController.swift */; };
+		51970B8E2B731C62007A5D15 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B8D2B731C62007A5D15 /* HomeView.swift */; };
+		51970B912B73F8EC007A5D15 /* CommonAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B902B73F8EC007A5D15 /* CommonAttributes.swift */; };
+		51970B942B74720D007A5D15 /* NewActiveMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B932B74720D007A5D15 /* NewActiveMatchesViewController.swift */; };
+		51970B962B747284007A5D15 /* ActiveMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B952B747284007A5D15 /* ActiveMatchesView.swift */; };
+		51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B982B7472E4007A5D15 /* HeaderView.swift */; };
+		51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B9A2B747310007A5D15 /* TeamListView.swift */; };
+		51B9ADFB2B754F150056AFB8 /* ShowEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9ADFA2B754F150056AFB8 /* ShowEquipmentViewController.swift */; };
+		51B9ADFD2B754F850056AFB8 /* ShowEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9ADFC2B754F850056AFB8 /* ShowEquipmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +46,23 @@
 		51082D922AE051C5007557C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51082D982AE06DCC007557C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMatchesViewController.swift; sourceTree = "<group>"; };
+		51082DA32AE5E050007557C1 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		51707BE22AE5F42000722645 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
+		51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
+		51707BEB2AE95E9100722645 /* ShowTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTeamsViewController.swift; sourceTree = "<group>"; };
+		51970B842B72B9D5007A5D15 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		51970B862B72BA09007A5D15 /* TextsInTheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsInTheApp.swift; sourceTree = "<group>"; };
+		51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
+		51970B8B2B731B48007A5D15 /* NewHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHomeViewController.swift; sourceTree = "<group>"; };
+		51970B8D2B731C62007A5D15 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		51970B902B73F8EC007A5D15 /* CommonAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAttributes.swift; sourceTree = "<group>"; };
+		51970B932B74720D007A5D15 /* NewActiveMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActiveMatchesViewController.swift; sourceTree = "<group>"; };
+		51970B952B747284007A5D15 /* ActiveMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMatchesView.swift; sourceTree = "<group>"; };
+		51970B982B7472E4007A5D15 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		51970B9A2B747310007A5D15 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
+		51B9ADFA2B754F150056AFB8 /* ShowEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipmentViewController.swift; sourceTree = "<group>"; };
+		51B9ADFC2B754F850056AFB8 /* ShowEquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51082DA12AE5E015007557C1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +96,14 @@
 		51082D832AE051C2007557C1 /* MixtosClub */ = {
 			isa = PBXGroup;
 			children = (
-				51082D9A2AE06DFF007557C1 /* ViewController */,
-				51082D842AE051C2007557C1 /* AppDelegate.swift */,
-				51082D862AE051C2007557C1 /* SceneDelegate.swift */,
-				51082D8A2AE051C2007557C1 /* Main.storyboard */,
+				51970B8F2B73F8DB007A5D15 /* Common */,
+				51970B822B72B98C007A5D15 /* Screens */,
+				51970B812B72B97F007A5D15 /* Resources */,
+				51970B7F2B72B8C9007A5D15 /* OldCode */,
+				51707BE42AE69D7900722645 /* Helper */,
+				51082DA52AE5E0C5007557C1 /* Model */,
+				51082DA22AE5E036007557C1 /* Service */,
 				51082D8D2AE051C5007557C1 /* Assets.xcassets */,
-				51082D8F2AE051C5007557C1 /* LaunchScreen.storyboard */,
 				51082D922AE051C5007557C1 /* Info.plist */,
 			);
 			path = MixtosClub;
@@ -77,8 +115,127 @@
 				51082D882AE051C2007557C1 /* LoginViewController.swift */,
 				51082D982AE06DCC007557C1 /* HomeViewController.swift */,
 				51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */,
+				51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */,
+				51707BEB2AE95E9100722645 /* ShowTeamsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		51082DA22AE5E036007557C1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				51082DA32AE5E050007557C1 /* Provider.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		51082DA52AE5E0C5007557C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51707BE22AE5F42000722645 /* Players.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51707BE42AE69D7900722645 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		51970B7F2B72B8C9007A5D15 /* OldCode */ = {
+			isa = PBXGroup;
+			children = (
+				51970B802B72B92B007A5D15 /* Other */,
+				51082D9A2AE06DFF007557C1 /* ViewController */,
+			);
+			path = OldCode;
+			sourceTree = "<group>";
+		};
+		51970B802B72B92B007A5D15 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				51082D842AE051C2007557C1 /* AppDelegate.swift */,
+				51082D862AE051C2007557C1 /* SceneDelegate.swift */,
+				51082D8A2AE051C2007557C1 /* Main.storyboard */,
+				51082D8F2AE051C5007557C1 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		51970B812B72B97F007A5D15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				51970B862B72BA09007A5D15 /* TextsInTheApp.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		51970B822B72B98C007A5D15 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				51B9ADF92B754ED70056AFB8 /* Equipment */,
+				51970B922B7471E7007A5D15 /* ActiveMatches */,
+				51970B8A2B731B38007A5D15 /* Home */,
+				51970B832B72B9BC007A5D15 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		51970B832B72B9BC007A5D15 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				51970B842B72B9D5007A5D15 /* LoginView.swift */,
+				51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		51970B8A2B731B38007A5D15 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				51970B8B2B731B48007A5D15 /* NewHomeViewController.swift */,
+				51970B8D2B731C62007A5D15 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		51970B8F2B73F8DB007A5D15 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				51970B902B73F8EC007A5D15 /* CommonAttributes.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		51970B922B7471E7007A5D15 /* ActiveMatches */ = {
+			isa = PBXGroup;
+			children = (
+				51970B972B7472BE007A5D15 /* SubViews */,
+				51970B932B74720D007A5D15 /* NewActiveMatchesViewController.swift */,
+				51970B952B747284007A5D15 /* ActiveMatchesView.swift */,
+			);
+			path = ActiveMatches;
+			sourceTree = "<group>";
+		};
+		51970B972B7472BE007A5D15 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				51970B982B7472E4007A5D15 /* HeaderView.swift */,
+				51970B9A2B747310007A5D15 /* TeamListView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		51B9ADF92B754ED70056AFB8 /* Equipment */ = {
+			isa = PBXGroup;
+			children = (
+				51B9ADFA2B754F150056AFB8 /* ShowEquipmentViewController.swift */,
+				51B9ADFC2B754F850056AFB8 /* ShowEquipmentView.swift */,
+			);
+			path = Equipment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +254,9 @@
 			dependencies = (
 			);
 			name = MixtosClub;
+			packageProductDependencies = (
+				51082DA02AE5E015007557C1 /* Alamofire */,
+			);
 			productName = MixtosClub;
 			productReference = 51082D812AE051C2007557C1 /* MixtosClub.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +285,9 @@
 				Base,
 			);
 			mainGroup = 51082D782AE051C2007557C1;
+			packageReferences = (
+				51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 51082D822AE051C2007557C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,8 +317,25 @@
 			files = (
 				51082D892AE051C2007557C1 /* LoginViewController.swift in Sources */,
 				51082D852AE051C2007557C1 /* AppDelegate.swift in Sources */,
+				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
+				51970B942B74720D007A5D15 /* NewActiveMatchesViewController.swift in Sources */,
+				51970B8E2B731C62007A5D15 /* HomeView.swift in Sources */,
+				51B9ADFB2B754F150056AFB8 /* ShowEquipmentViewController.swift in Sources */,
+				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
+				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
+				51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */,
+				51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */,
+				51970B8C2B731B48007A5D15 /* NewHomeViewController.swift in Sources */,
 				51082D872AE051C2007557C1 /* SceneDelegate.swift in Sources */,
+				51707BE32AE5F42000722645 /* Players.swift in Sources */,
+				51970B872B72BA09007A5D15 /* TextsInTheApp.swift in Sources */,
+				51B9ADFD2B754F850056AFB8 /* ShowEquipmentView.swift in Sources */,
 				51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */,
+				51970B912B73F8EC007A5D15 /* CommonAttributes.swift in Sources */,
+				51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */,
+				51082DA42AE5E050007557C1 /* Provider.swift in Sources */,
+				51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */,
+				51970B962B747284007A5D15 /* ActiveMatchesView.swift in Sources */,
 				51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,16 +485,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MixtosClub/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = virusmantis.MixtosClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -332,16 +514,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MixtosClub/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = virusmantis.MixtosClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -372,6 +556,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		51082DA02AE5E015007557C1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51082D792AE051C2007557C1 /* Project object */;
 }
