@@ -16,15 +16,9 @@ class HomeView: UIView {
     
     let textAPP = TextsInTheApp()
     weak var delegate: HomeViewDelegate?
-    
-    private lazy var scrollView: UIScrollView = {
-        let scroll = UIScrollView()
-        scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.backgroundColor = .white
-        //scroll.contentSize = CGSize(width: self.bounds.width, height: 1500)
-        scroll.contentSize = CGSize(width: self.bounds.width, height: adminPanel.frame.origin.y + adminPanel.frame.size.height + 20)
-        return scroll
-    }()
+    private var kindUser: String
+    private var activeSecondaryMatches: Bool
+    private var numberOfViews: Int
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -35,257 +29,154 @@ class HomeView: UIView {
         return label
     }()
     
-    private lazy var activeMatchesLabel: UILabel = {
-        let label = UILabel()
-        label.text = textAPP.activeMatches
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 16.0)
-        return label
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .white
+        scrollView.isDirectionalLockEnabled = true
+        return scrollView
     }()
     
-    private lazy var firstMatch: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.white
-        
-        let imageView = UIImageView(image: UIImage(named: "calendar"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "7 Feb"
-        label.textAlignment = .center
-        
-        button.addSubview(imageView)
-        button.addSubview(label)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.purple.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapFirstMatch), for: .touchUpInside)
-        return button
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var mainView: MainMatchesView = {
+        let view = MainMatchesView()
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    private lazy var secondMatch: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.white
-        
-        let imageView = UIImageView(image: UIImage(named: "calendar"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "10 Feb"
-        label.textAlignment = .center
-        
-        button.addSubview(imageView)
-        button.addSubview(label)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.purple.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapSecondMatch), for: .touchUpInside)
-        return button
+    private lazy var secondaryView: SecondaryMatchesView = {
+        let view = SecondaryMatchesView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    private lazy var thirdMatch: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.white
-        
-        let imageView = UIImageView(image: UIImage(named: "calendar"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "15 Marz"
-        label.textAlignment = .center
-        
-        button.addSubview(imageView)
-        button.addSubview(label)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.purple.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapThirdMatch), for: .touchUpInside)
-        return button
+    private lazy var informativeView: InformativeSectionView = {
+        let view = InformativeSectionView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
-    private lazy var informativeLabel: UILabel = {
-        let label = UILabel()
-        label.text = textAPP.informative
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 16.0)
-        return label
-    }()
-    
-    private lazy var pastMatches: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.white
-        
-        let imageView = UIImageView(image: UIImage(named: "pasado"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Historial"
-        label.textAlignment = .center
-        
-        button.addSubview(imageView)
-        button.addSubview(label)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.purple.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapPastMatches), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var finances: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.white
-        
-        let imageView = UIImageView(image: UIImage(named: "finanzas"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Finanzas"
-        label.textAlignment = .center
-        
-        button.addSubview(imageView)
-        button.addSubview(label)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.purple.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapFinances), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var adminLabel: UILabel = {
-        let label = UILabel()
-        label.text = textAPP.adminPanel
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 16.0)
-        return label
-    }()
-    
-    private lazy var adminPanel: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor.white
-        
-        let imageView = UIImageView(image: UIImage(named: "admin2"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Admin"
-        label.textAlignment = .center
-        
-        button.addSubview(imageView)
-        button.addSubview(label)
-        button.layer.borderWidth = 2.0
-        button.layer.borderColor = UIColor.purple.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapAdminPanel), for: .touchUpInside)
-        return button
+    private lazy var administrationView: AdministrationPanelView = {
+        let view = AdministrationPanelView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
  
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(kindUser: String, activeSecondaryMatches: Bool, numberOfViews: Int = 3) {
+        self.kindUser = kindUser
+        self.activeSecondaryMatches = activeSecondaryMatches
+        self.numberOfViews = numberOfViews
+        super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
         backgroundColor = .white
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func kindMultiplier(activate: Bool) -> CGFloat {
+        if activate  && numberOfViews > 4 {
+            let sizeScreen = UIScreen.main.bounds.width
+            
+            if sizeScreen > 380 {
+                return 1
+            } else {
+                return 1.5
+            }
+        } else {
+            return 0
+        }
     }
 }
 
 extension HomeView {
     
     private func buildViewHierarchy() {
-        scrollView.addSubview(titleLabel)
-        scrollView.addSubview(activeMatchesLabel)
-        scrollView.addSubview(firstMatch)
-        scrollView.addSubview(secondMatch)
-        scrollView.addSubview(thirdMatch)
-        scrollView.addSubview(informativeLabel)
-        scrollView.addSubview(pastMatches)
-        scrollView.addSubview(finances)
-        scrollView.addSubview(adminLabel)
-        scrollView.addSubview(adminPanel)
         addSubview(scrollView)
-        //[titleLabel, firstMatch, secondMatch, thirdMatch, pastMatches, finances, adminPanel].forEach(addSubview)
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(mainView)
+        contentView.addSubview(informativeView)
+        if activeSecondaryMatches {
+            contentView.addSubview(secondaryView)
+            numberOfViews = 4
+        }
+        if kindUser == kindUserType.admin.rawValue {
+            contentView.addSubview(administrationView)
+            numberOfViews = 5
+        }
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            
-            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            //scrollView.bottomAnchor.constraint(greaterThanOrEqualTo: adminPanel.bottomAnchor, constant: 20),
-
             
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: kindMultiplier(activate: activeSecondaryMatches)),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             
-            activeMatchesLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 40),
-            activeMatchesLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-
-            firstMatch.topAnchor.constraint(equalTo: activeMatchesLabel.bottomAnchor, constant: 30),
-            firstMatch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            firstMatch.widthAnchor.constraint(equalToConstant: 110),
-            firstMatch.heightAnchor.constraint(equalToConstant: 110),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            secondMatch.topAnchor.constraint(equalTo: activeMatchesLabel.bottomAnchor, constant: 30),
-            secondMatch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            secondMatch.widthAnchor.constraint(equalToConstant: 110),
-            secondMatch.heightAnchor.constraint(equalToConstant: 110),
+            mainView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            mainView.heightAnchor.constraint(equalToConstant: 175),
             
-            thirdMatch.topAnchor.constraint(equalTo: firstMatch.bottomAnchor, constant: 30),
-            thirdMatch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            thirdMatch.widthAnchor.constraint(equalToConstant: 110),
-            thirdMatch.heightAnchor.constraint(equalToConstant: 110),
-            
-            informativeLabel.topAnchor.constraint(equalTo: thirdMatch.bottomAnchor, constant: 40),
-            informativeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            
-            pastMatches.topAnchor.constraint(equalTo: informativeLabel.bottomAnchor, constant: 30),
-            pastMatches.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            pastMatches.widthAnchor.constraint(equalToConstant: 110),
-            pastMatches.heightAnchor.constraint(equalToConstant: 110),
-            
-            finances.topAnchor.constraint(equalTo: informativeLabel.bottomAnchor, constant: 30),
-            finances.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            finances.widthAnchor.constraint(equalToConstant: 110),
-            finances.heightAnchor.constraint(equalToConstant: 110),
-            
-            adminLabel.topAnchor.constraint(equalTo: finances.bottomAnchor, constant: 40),
-            adminLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            
-            adminPanel.topAnchor.constraint(equalTo: adminLabel.bottomAnchor, constant: 30),
-            adminPanel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            adminPanel.widthAnchor.constraint(equalToConstant: 110),
-            adminPanel.heightAnchor.constraint(equalToConstant: 110)
+            //informativeView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 10),
+            informativeView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            informativeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            informativeView.heightAnchor.constraint(equalToConstant: 175)
         ])
+        
+        if activeSecondaryMatches {
+            NSLayoutConstraint.activate([
+                
+                secondaryView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 10),
+                secondaryView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                secondaryView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                secondaryView.heightAnchor.constraint(equalToConstant: 155),
+                
+                informativeView.topAnchor.constraint(equalTo: secondaryView.bottomAnchor, constant: 10)
+                
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                informativeView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 10)
+            ])
+        }
+        
+        if kindUser == kindUserType.admin.rawValue {
+            NSLayoutConstraint.activate([
+                
+                administrationView.topAnchor.constraint(equalTo: informativeView.bottomAnchor, constant: 10),
+                administrationView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                administrationView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                administrationView.heightAnchor.constraint(equalToConstant: 175)
+                
+            ])
+        }
     }
 }
 
 extension HomeView {
-    
-    @objc
-    func didTapFirstMatch() {
-        delegate?.tapFirstMatch()
-    }
-    
-    @objc
-    func didTapSecondMatch() {
-        print("presione boton 2")
-    }
-    
     @objc
     func didTapThirdMatch() {
         print("presione boton 3")
@@ -304,5 +195,11 @@ extension HomeView {
     @objc
     func didTapAdminPanel() {
         print("presione boton 6")
+    }
+}
+
+extension HomeView: MainMatchesViewDelegate {
+    func tapFirstMatch() {
+        delegate?.tapFirstMatch()
     }
 }

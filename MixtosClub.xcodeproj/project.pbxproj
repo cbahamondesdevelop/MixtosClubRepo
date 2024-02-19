@@ -33,6 +33,11 @@
 		51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B9A2B747310007A5D15 /* TeamListView.swift */; };
 		51B9ADFB2B754F150056AFB8 /* ShowEquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9ADFA2B754F150056AFB8 /* ShowEquipmentViewController.swift */; };
 		51B9ADFD2B754F850056AFB8 /* ShowEquipmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B9ADFC2B754F850056AFB8 /* ShowEquipmentView.swift */; };
+		51CDD8632B7A8A85005E59CB /* MainMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD8622B7A8A85005E59CB /* MainMatchesView.swift */; };
+		51CDD8652B7A8ACC005E59CB /* SecondaryMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD8642B7A8ACC005E59CB /* SecondaryMatchesView.swift */; };
+		51CDD8672B7A8B07005E59CB /* InformativeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD8662B7A8B07005E59CB /* InformativeSectionView.swift */; };
+		51CDD8692B7A8B42005E59CB /* AdministrationPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD8682B7A8B42005E59CB /* AdministrationPanelView.swift */; };
+		51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD86A2B7AC5A6005E59CB /* ScrollStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		51970B9A2B747310007A5D15 /* TeamListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListView.swift; sourceTree = "<group>"; };
 		51B9ADFA2B754F150056AFB8 /* ShowEquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipmentViewController.swift; sourceTree = "<group>"; };
 		51B9ADFC2B754F850056AFB8 /* ShowEquipmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEquipmentView.swift; sourceTree = "<group>"; };
+		51CDD8622B7A8A85005E59CB /* MainMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMatchesView.swift; sourceTree = "<group>"; };
+		51CDD8642B7A8ACC005E59CB /* SecondaryMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryMatchesView.swift; sourceTree = "<group>"; };
+		51CDD8662B7A8B07005E59CB /* InformativeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformativeSectionView.swift; sourceTree = "<group>"; };
+		51CDD8682B7A8B42005E59CB /* AdministrationPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationPanelView.swift; sourceTree = "<group>"; };
+		51CDD86A2B7AC5A6005E59CB /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +206,7 @@
 		51970B8A2B731B38007A5D15 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				51CDD8612B7A8A38005E59CB /* SubViews */,
 				51970B8B2B731B48007A5D15 /* NewHomeViewController.swift */,
 				51970B8D2B731C62007A5D15 /* HomeView.swift */,
 			);
@@ -206,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				51970B902B73F8EC007A5D15 /* CommonAttributes.swift */,
+				51CDD86A2B7AC5A6005E59CB /* ScrollStackView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -236,6 +248,17 @@
 				51B9ADFC2B754F850056AFB8 /* ShowEquipmentView.swift */,
 			);
 			path = Equipment;
+			sourceTree = "<group>";
+		};
+		51CDD8612B7A8A38005E59CB /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				51CDD8622B7A8A85005E59CB /* MainMatchesView.swift */,
+				51CDD8642B7A8ACC005E59CB /* SecondaryMatchesView.swift */,
+				51CDD8662B7A8B07005E59CB /* InformativeSectionView.swift */,
+				51CDD8682B7A8B42005E59CB /* AdministrationPanelView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +347,8 @@
 				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
 				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
 				51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */,
+				51CDD8692B7A8B42005E59CB /* AdministrationPanelView.swift in Sources */,
+				51CDD8632B7A8A85005E59CB /* MainMatchesView.swift in Sources */,
 				51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */,
 				51970B8C2B731B48007A5D15 /* NewHomeViewController.swift in Sources */,
 				51082D872AE051C2007557C1 /* SceneDelegate.swift in Sources */,
@@ -333,8 +358,11 @@
 				51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */,
 				51970B912B73F8EC007A5D15 /* CommonAttributes.swift in Sources */,
 				51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */,
+				51CDD8672B7A8B07005E59CB /* InformativeSectionView.swift in Sources */,
 				51082DA42AE5E050007557C1 /* Provider.swift in Sources */,
 				51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */,
+				51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */,
+				51CDD8652B7A8ACC005E59CB /* SecondaryMatchesView.swift in Sources */,
 				51970B962B747284007A5D15 /* ActiveMatchesView.swift in Sources */,
 				51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */,
 			);
@@ -483,6 +511,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3H2J727ZZN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MixtosClub/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
@@ -512,6 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3H2J727ZZN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MixtosClub/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
