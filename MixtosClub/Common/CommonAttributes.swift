@@ -21,3 +21,8 @@ enum ButtonOfHome: String {
     case seventh = "seventh"
     case eighth = "eighth"
 }
+
+enum kindUserType: String {
+    case admin = "admin"
+    case standard = "standard"
+}

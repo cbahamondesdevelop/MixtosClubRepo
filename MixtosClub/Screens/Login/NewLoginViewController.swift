@@ -25,6 +25,10 @@ class NewLoginViewController: UIViewController {
         buildViewHierarchy()
         setupConstraints()
         overrideUserInterfaceStyle = .light
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(myDismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     func makeLogin(user: String, password: String) {
@@ -53,6 +57,11 @@ class NewLoginViewController: UIViewController {
         let alert = UIAlertController(title: textAPP.titleAlert, message: textAPP.alertContent, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: textAPP.iAgree, style: UIAlertAction.Style.default, handler: nil))
         self.present(alert,animated: true, completion: nil)
+    }
+    
+    @objc
+    func myDismissKeyboard() {
+        view.endEditing(true)
     }
 }
 

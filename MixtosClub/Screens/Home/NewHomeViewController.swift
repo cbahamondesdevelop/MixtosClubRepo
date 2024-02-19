@@ -14,7 +14,7 @@ class NewHomeViewController: UIViewController {
     //let provider = Provider(initialDate: "2023-01-01", finalDate: "2023-01-02")
     
     private lazy var homeView: HomeView = {
-        let view = HomeView()
+        let view = HomeView(kindUser: kindUserType.admin.rawValue, activeSecondaryMatches: true)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         return view
@@ -25,6 +25,7 @@ class NewHomeViewController: UIViewController {
         buildViewHierarchy()
         setupConstraints()
         overrideUserInterfaceStyle = .light
+        self.navigationItem.hidesBackButton = true
     }
     
     func showAlert() {
