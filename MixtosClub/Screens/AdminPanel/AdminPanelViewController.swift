@@ -1,22 +1,21 @@
 //
-//  HomeViewController.swift
+//  AdminPanelViewController.swift
 //  MixtosClub
 //
-//  Created by Cristian Bahamondes on 06-02-24.
+//  Created by Cristian Bahamondes on 19-02-24.
 //
 
 import Foundation
 import UIKit
 
-class NewHomeViewController: UIViewController {
+class AdminPanelViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
-    //let provider = Provider(initialDate: "2023-01-01", finalDate: "2023-01-02")
     
-    private lazy var homeView: HomeView = {
-        let view = HomeView(kindUser: kindUserType.admin.rawValue, activeSecondaryMatches: true)
+    private lazy var adminView: AdminPanelView = {
+        let view = AdminPanelView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.delegate = self
+        //view.delegate = self
         return view
     }()
     
@@ -25,7 +24,8 @@ class NewHomeViewController: UIViewController {
         buildViewHierarchy()
         setupConstraints()
         overrideUserInterfaceStyle = .light
-        self.navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.topItem?.backButtonTitle = textAPP.back
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     func showAlert() {
@@ -35,30 +35,27 @@ class NewHomeViewController: UIViewController {
     }
 }
 
-extension NewHomeViewController {
+extension AdminPanelViewController {
     func buildViewHierarchy() {
         view.backgroundColor = .purple
-        view.addSubview(homeView)
+        view.addSubview(adminView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            homeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            homeView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            homeView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            homeView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            adminView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            adminView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            adminView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            adminView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
-
-extension NewHomeViewController: HomeViewDelegate {
-    func goAdminPanel() {
-        let controller = AdminPanelViewController()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
+/*
+extension AdminPanelViewController: HomeViewDelegate {
     func tapFirstMatch() {
         let controller = NewActiveMatchesViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
+    
 }
+*/

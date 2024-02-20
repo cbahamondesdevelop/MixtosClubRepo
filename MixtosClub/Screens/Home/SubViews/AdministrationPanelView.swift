@@ -8,9 +8,14 @@
 import Foundation
 import UIKit
 
+protocol AdministrationPanelViewDelegate: AnyObject {
+    func adminPanel()
+}
+
 class AdministrationPanelView: UIView {
     
     let textAPP = TextsInTheApp()
+    weak var delegate: AdministrationPanelViewDelegate?
     
     private lazy var adminLabel: UILabel = {
         let label = UILabel()
@@ -77,6 +82,6 @@ extension AdministrationPanelView {
 extension AdministrationPanelView {
     @objc
     func didTapAdminPanel() {
-        print("didTapPastMatches")
+        delegate?.adminPanel()
     }
 }

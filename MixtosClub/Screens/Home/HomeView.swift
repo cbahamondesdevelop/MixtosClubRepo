@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeViewDelegate: AnyObject {
     func tapFirstMatch()
+    func goAdminPanel()
 }
 
 class HomeView: UIView {
@@ -65,6 +66,7 @@ class HomeView: UIView {
     
     private lazy var administrationView: AdministrationPanelView = {
         let view = AdministrationPanelView()
+        view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -201,5 +203,11 @@ extension HomeView {
 extension HomeView: MainMatchesViewDelegate {
     func tapFirstMatch() {
         delegate?.tapFirstMatch()
+    }
+}
+
+extension HomeView: AdministrationPanelViewDelegate {
+    func adminPanel() {
+        delegate?.goAdminPanel()
     }
 }

@@ -21,6 +21,10 @@
 		51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */; };
 		51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */; };
 		51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BEB2AE95E9100722645 /* ShowTeamsViewController.swift */; };
+		518C34872B84004B00C0723D /* AdminPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34862B84004B00C0723D /* AdminPanelViewController.swift */; };
+		518C34892B8400A600C0723D /* AdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34882B8400A600C0723D /* AdminPanelView.swift */; };
+		518C348B2B84032F00C0723D /* FirstAdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C348A2B84032F00C0723D /* FirstAdminPanelView.swift */; };
+		518C348D2B844F4700C0723D /* SecondAdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C348C2B844F4700C0723D /* SecondAdminPanelView.swift */; };
 		51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B842B72B9D5007A5D15 /* LoginView.swift */; };
 		51970B872B72BA09007A5D15 /* TextsInTheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B862B72BA09007A5D15 /* TextsInTheApp.swift */; };
 		51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */; };
@@ -56,6 +60,10 @@
 		51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
 		51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 		51707BEB2AE95E9100722645 /* ShowTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTeamsViewController.swift; sourceTree = "<group>"; };
+		518C34862B84004B00C0723D /* AdminPanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelViewController.swift; sourceTree = "<group>"; };
+		518C34882B8400A600C0723D /* AdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelView.swift; sourceTree = "<group>"; };
+		518C348A2B84032F00C0723D /* FirstAdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAdminPanelView.swift; sourceTree = "<group>"; };
+		518C348C2B844F4700C0723D /* SecondAdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAdminPanelView.swift; sourceTree = "<group>"; };
 		51970B842B72B9D5007A5D15 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		51970B862B72BA09007A5D15 /* TextsInTheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsInTheApp.swift; sourceTree = "<group>"; };
 		51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +163,25 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		518C34842B84000300C0723D /* AdminPanel */ = {
+			isa = PBXGroup;
+			children = (
+				518C34852B84002900C0723D /* SubViews */,
+				518C34862B84004B00C0723D /* AdminPanelViewController.swift */,
+				518C34882B8400A600C0723D /* AdminPanelView.swift */,
+			);
+			path = AdminPanel;
+			sourceTree = "<group>";
+		};
+		518C34852B84002900C0723D /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				518C348A2B84032F00C0723D /* FirstAdminPanelView.swift */,
+				518C348C2B844F4700C0723D /* SecondAdminPanelView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		51970B7F2B72B8C9007A5D15 /* OldCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +213,7 @@
 		51970B822B72B98C007A5D15 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				518C34842B84000300C0723D /* AdminPanel */,
 				51B9ADF92B754ED70056AFB8 /* Equipment */,
 				51970B922B7471E7007A5D15 /* ActiveMatches */,
 				51970B8A2B731B38007A5D15 /* Home */,
@@ -343,6 +371,8 @@
 				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
 				51970B942B74720D007A5D15 /* NewActiveMatchesViewController.swift in Sources */,
 				51970B8E2B731C62007A5D15 /* HomeView.swift in Sources */,
+				518C34892B8400A600C0723D /* AdminPanelView.swift in Sources */,
+				518C348D2B844F4700C0723D /* SecondAdminPanelView.swift in Sources */,
 				51B9ADFB2B754F150056AFB8 /* ShowEquipmentViewController.swift in Sources */,
 				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
 				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
@@ -351,6 +381,7 @@
 				51CDD8632B7A8A85005E59CB /* MainMatchesView.swift in Sources */,
 				51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */,
 				51970B8C2B731B48007A5D15 /* NewHomeViewController.swift in Sources */,
+				518C34872B84004B00C0723D /* AdminPanelViewController.swift in Sources */,
 				51082D872AE051C2007557C1 /* SceneDelegate.swift in Sources */,
 				51707BE32AE5F42000722645 /* Players.swift in Sources */,
 				51970B872B72BA09007A5D15 /* TextsInTheApp.swift in Sources */,
@@ -364,6 +395,7 @@
 				51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */,
 				51CDD8652B7A8ACC005E59CB /* SecondaryMatchesView.swift in Sources */,
 				51970B962B747284007A5D15 /* ActiveMatchesView.swift in Sources */,
+				518C348B2B84032F00C0723D /* FirstAdminPanelView.swift in Sources */,
 				51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
