@@ -8,14 +8,19 @@
 import Foundation
 import UIKit
 
+protocol SecondAdminPanelViewDelegate: AnyObject {
+    func tapPlayers()
+    func tapFinance()
+}
+
 class SecondAdminPanelView: UIView {
     
     let textAPP = TextsInTheApp()
-    weak var delegate: FirstAdminPanelViewDelegate?
+    weak var delegate: SecondAdminPanelViewDelegate?
     
     private lazy var otherOptionsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Otras configuraciones"//textAPP.activeMatches
+        label.text = textAPP.otherConfiguration
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 16.0)
@@ -31,7 +36,7 @@ class SecondAdminPanelView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Jugador"
+        label.text = textAPP.player
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -52,7 +57,7 @@ class SecondAdminPanelView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Finanzas"
+        label.text = textAPP.finance
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -104,13 +109,11 @@ extension SecondAdminPanelView {
 extension SecondAdminPanelView {
     @objc
     func didTapPlayers() {
-        print("presione crear partido")
-        delegate?.makeMatch()
+        delegate?.tapPlayers()
     }
     
     @objc
     func didTapFinance() {
-        print("presione crear equipo")
-        delegate?.createTeam()
+        delegate?.tapFinance()
     }
 }

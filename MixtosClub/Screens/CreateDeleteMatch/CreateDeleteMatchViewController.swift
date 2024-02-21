@@ -1,19 +1,19 @@
 //
-//  AdminPanelViewController.swift
+//  createDeleteMatchViewController.swift
 //  MixtosClub
 //
-//  Created by Cristian Bahamondes on 19-02-24.
+//  Created by Cristian Bahamondes on 21-02-24.
 //
 
 import Foundation
 import UIKit
 
-class AdminPanelViewController: UIViewController {
+class CreateDeleteMatchViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
     
-    private lazy var adminView: AdminPanelView = {
-        let view = AdminPanelView()
+    private lazy var createDeleteView: CreateDeleteMatchView = {
+        let view = CreateDeleteMatchView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         return view
@@ -35,38 +35,30 @@ class AdminPanelViewController: UIViewController {
     }
 }
 
-extension AdminPanelViewController {
+extension CreateDeleteMatchViewController {
     func buildViewHierarchy() {
         view.backgroundColor = .purple
-        view.addSubview(adminView)
+        view.addSubview(createDeleteView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            adminView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            adminView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            adminView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            adminView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            createDeleteView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            createDeleteView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            createDeleteView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            createDeleteView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
 
-extension AdminPanelViewController: AdminPanelViewDelegate {
-    func tapPlayers() {
-        print("create player")
+extension CreateDeleteMatchViewController: CreateDeleteMatchViewDelegate {
+    func createMatch() {
+        let controller = MakeMatchViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
-    func tapFinance() {
-        print("finance")
-    }
-    
-    func tapCreateTeam() {
-        print("create team")
-    }
-    
-    func tapMakeMatch() {
-        let controller = CreateDeleteMatchViewController()
+    func deleteMatch() {
+        let controller = DeleteMatchViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
 }
-

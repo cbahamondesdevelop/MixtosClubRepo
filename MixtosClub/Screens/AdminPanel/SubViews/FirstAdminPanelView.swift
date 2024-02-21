@@ -20,7 +20,7 @@ class FirstAdminPanelView: UIView {
     
     private lazy var matchesOptionsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Configuraciones de partido"//textAPP.activeMatches
+        label.text = textAPP.matchesOptions
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 16.0)
@@ -36,7 +36,7 @@ class FirstAdminPanelView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Partidos"
+        label.text = textAPP.matches
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -57,7 +57,7 @@ class FirstAdminPanelView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Equipos"
+        label.text = textAPP.matches
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -109,13 +109,11 @@ extension FirstAdminPanelView {
 extension FirstAdminPanelView {
     @objc
     func didTapMakeMatch() {
-        print("presione crear partido")
         delegate?.makeMatch()
     }
     
     @objc
     func didTapCreateTeam() {
-        print("presione crear equipo")
         delegate?.createTeam()
     }
 }

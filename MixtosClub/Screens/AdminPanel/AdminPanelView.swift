@@ -8,10 +8,17 @@
 import Foundation
 import UIKit
 
+protocol AdminPanelViewDelegate: AnyObject {
+    func tapCreateTeam()
+    func tapMakeMatch()
+    func tapPlayers()
+    func tapFinance()
+}
+
 class AdminPanelView: UIView {
     
     let textAPP = TextsInTheApp()
-    weak var delegate: HomeViewDelegate?
+    weak var delegate: AdminPanelViewDelegate?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -77,10 +84,20 @@ extension AdminPanelView {
 
 extension AdminPanelView: FirstAdminPanelViewDelegate {
     func createTeam() {
-        print("create team")
+        delegate?.tapCreateTeam()
     }
     
     func makeMatch() {
-        print("make match")
+        delegate?.tapMakeMatch()
+    }
+}
+
+extension AdminPanelView: SecondAdminPanelViewDelegate {
+    func tapPlayers() {
+        delegate?.tapPlayers()
+    }
+    
+    func tapFinance() {
+        delegate?.tapFinance()
     }
 }

@@ -25,6 +25,12 @@
 		518C34892B8400A600C0723D /* AdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34882B8400A600C0723D /* AdminPanelView.swift */; };
 		518C348B2B84032F00C0723D /* FirstAdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C348A2B84032F00C0723D /* FirstAdminPanelView.swift */; };
 		518C348D2B844F4700C0723D /* SecondAdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C348C2B844F4700C0723D /* SecondAdminPanelView.swift */; };
+		518C34B02B85310C00C0723D /* MakeMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34AF2B85310C00C0723D /* MakeMatchViewController.swift */; };
+		518C34B22B85316600C0723D /* MakeMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34B12B85316600C0723D /* MakeMatchView.swift */; };
+		518C34B52B86330E00C0723D /* CreateDeleteMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34B42B86330E00C0723D /* CreateDeleteMatchViewController.swift */; };
+		518C34B72B8633B700C0723D /* CreateDeleteMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34B62B8633B700C0723D /* CreateDeleteMatchView.swift */; };
+		518C34BA2B864D9F00C0723D /* DeleteMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34B92B864D9E00C0723D /* DeleteMatchViewController.swift */; };
+		518C34BC2B8651EB00C0723D /* DeleteMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C34BB2B8651EB00C0723D /* DeleteMatchView.swift */; };
 		51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B842B72B9D5007A5D15 /* LoginView.swift */; };
 		51970B872B72BA09007A5D15 /* TextsInTheApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B862B72BA09007A5D15 /* TextsInTheApp.swift */; };
 		51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */; };
@@ -64,6 +70,12 @@
 		518C34882B8400A600C0723D /* AdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelView.swift; sourceTree = "<group>"; };
 		518C348A2B84032F00C0723D /* FirstAdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAdminPanelView.swift; sourceTree = "<group>"; };
 		518C348C2B844F4700C0723D /* SecondAdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAdminPanelView.swift; sourceTree = "<group>"; };
+		518C34AF2B85310C00C0723D /* MakeMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMatchViewController.swift; sourceTree = "<group>"; };
+		518C34B12B85316600C0723D /* MakeMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMatchView.swift; sourceTree = "<group>"; };
+		518C34B42B86330E00C0723D /* CreateDeleteMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeleteMatchViewController.swift; sourceTree = "<group>"; };
+		518C34B62B8633B700C0723D /* CreateDeleteMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDeleteMatchView.swift; sourceTree = "<group>"; };
+		518C34B92B864D9E00C0723D /* DeleteMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMatchViewController.swift; sourceTree = "<group>"; };
+		518C34BB2B8651EB00C0723D /* DeleteMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteMatchView.swift; sourceTree = "<group>"; };
 		51970B842B72B9D5007A5D15 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		51970B862B72BA09007A5D15 /* TextsInTheApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextsInTheApp.swift; sourceTree = "<group>"; };
 		51970B882B72CDCD007A5D15 /* NewLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +194,33 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		518C34AE2B8530D200C0723D /* MakeMatch */ = {
+			isa = PBXGroup;
+			children = (
+				518C34AF2B85310C00C0723D /* MakeMatchViewController.swift */,
+				518C34B12B85316600C0723D /* MakeMatchView.swift */,
+			);
+			path = MakeMatch;
+			sourceTree = "<group>";
+		};
+		518C34B32B8632ED00C0723D /* CreateDeleteMatch */ = {
+			isa = PBXGroup;
+			children = (
+				518C34B42B86330E00C0723D /* CreateDeleteMatchViewController.swift */,
+				518C34B62B8633B700C0723D /* CreateDeleteMatchView.swift */,
+			);
+			path = CreateDeleteMatch;
+			sourceTree = "<group>";
+		};
+		518C34B82B864D8900C0723D /* DeleteMatch */ = {
+			isa = PBXGroup;
+			children = (
+				518C34B92B864D9E00C0723D /* DeleteMatchViewController.swift */,
+				518C34BB2B8651EB00C0723D /* DeleteMatchView.swift */,
+			);
+			path = DeleteMatch;
+			sourceTree = "<group>";
+		};
 		51970B7F2B72B8C9007A5D15 /* OldCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +252,9 @@
 		51970B822B72B98C007A5D15 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				518C34B82B864D8900C0723D /* DeleteMatch */,
+				518C34B32B8632ED00C0723D /* CreateDeleteMatch */,
+				518C34AE2B8530D200C0723D /* MakeMatch */,
 				518C34842B84000300C0723D /* AdminPanel */,
 				51B9ADF92B754ED70056AFB8 /* Equipment */,
 				51970B922B7471E7007A5D15 /* ActiveMatches */,
@@ -368,12 +410,16 @@
 			files = (
 				51082D892AE051C2007557C1 /* LoginViewController.swift in Sources */,
 				51082D852AE051C2007557C1 /* AppDelegate.swift in Sources */,
+				518C34B02B85310C00C0723D /* MakeMatchViewController.swift in Sources */,
 				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
+				518C34B72B8633B700C0723D /* CreateDeleteMatchView.swift in Sources */,
 				51970B942B74720D007A5D15 /* NewActiveMatchesViewController.swift in Sources */,
 				51970B8E2B731C62007A5D15 /* HomeView.swift in Sources */,
 				518C34892B8400A600C0723D /* AdminPanelView.swift in Sources */,
 				518C348D2B844F4700C0723D /* SecondAdminPanelView.swift in Sources */,
+				518C34BA2B864D9F00C0723D /* DeleteMatchViewController.swift in Sources */,
 				51B9ADFB2B754F150056AFB8 /* ShowEquipmentViewController.swift in Sources */,
+				518C34B22B85316600C0723D /* MakeMatchView.swift in Sources */,
 				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
 				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
 				51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */,
@@ -381,6 +427,7 @@
 				51CDD8632B7A8A85005E59CB /* MainMatchesView.swift in Sources */,
 				51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */,
 				51970B8C2B731B48007A5D15 /* NewHomeViewController.swift in Sources */,
+				518C34B52B86330E00C0723D /* CreateDeleteMatchViewController.swift in Sources */,
 				518C34872B84004B00C0723D /* AdminPanelViewController.swift in Sources */,
 				51082D872AE051C2007557C1 /* SceneDelegate.swift in Sources */,
 				51707BE32AE5F42000722645 /* Players.swift in Sources */,
@@ -390,6 +437,7 @@
 				51970B912B73F8EC007A5D15 /* CommonAttributes.swift in Sources */,
 				51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */,
 				51CDD8672B7A8B07005E59CB /* InformativeSectionView.swift in Sources */,
+				518C34BC2B8651EB00C0723D /* DeleteMatchView.swift in Sources */,
 				51082DA42AE5E050007557C1 /* Provider.swift in Sources */,
 				51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */,
 				51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */,
@@ -552,7 +600,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,7 +630,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
