@@ -10,44 +10,55 @@ import UIKit
 
 class CreateTeamViewCell: UITableViewCell {
     
-    let nameLabel = UILabel()
-    let emojiLabel = UILabel()
-    let colorSwitch = UISwitch()
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var emojiLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var colorSwitch: UISwitch = {
+        let mySwitch = UISwitch()
+        mySwitch.addTarget(self, action: #selector(switchChanged), for: .touchUpInside)
+        mySwitch.translatesAutoresizingMaskIntoConstraints = false
+        return mySwitch
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupViews()
+        buildViewHierarchy()
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupViews() {
-        // Configuración de la etiqueta del nombre
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+}
+
+extension CreateTeamViewCell {
+    private func buildViewHierarchy() {
+        //[nameLabel, emojiLabel, colorSwitch].forEach(addSubview)
         contentView.addSubview(nameLabel)
+        contentView.addSubview(emojiLabel)
+        contentView.addSubview(colorSwitch)
+    }
+    
+    private func setupConstraints() {
         nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         
-        // Configuración de la etiqueta del emoticón
-        emojiLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(emojiLabel)
         emojiLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
         emojiLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         
-        // Configuración del interruptor de color
-        colorSwitch.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(colorSwitch)
         colorSwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         colorSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        colorSwitch.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
-        
-        // Configuración de la apariencia inicial
-        nameLabel.text = "Nombre"
-        emojiLabel.text = "😊"
-        contentView.backgroundColor = .white
     }
 }
 
