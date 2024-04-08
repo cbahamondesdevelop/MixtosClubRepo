@@ -27,13 +27,17 @@ class TextsInTheApp {
     let day = "Día"
     let month = "Mes"
     let year = "Año"
+    let genderPlayer = "Genero del jugador"
     let matchTime = "Hora del partido"
     let price = "Valor cancha"
     let infoMakeMatch = "Informacion de partido"
+    let infoPlayer = "Informacion del jugador"
     let saveInfo = "Guardar"
     let createDelete = "Crear o eliminar partido"
     let otherConfiguration = "Otras configuraciones"
     let matchesOptions = "Configuraciones de partido"
+    let male = "Masculino"
+    let female = "Femenino"
     
     //MARK: Button
     let getIntoButton = "Ingresar"
@@ -62,6 +66,7 @@ class TextsInTheApp {
     let informative = "Seccion informativa"
     let adminPanel = "Panel admin"
     let makeMatch = "Crear partido"
+    let createPlayer = "Crear jugador"
     let selectMatch = "Selecciona el partido que vas a eliminar"
     
     //MARK: Title Cell

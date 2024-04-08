@@ -53,7 +53,8 @@ extension AdminPanelViewController {
 
 extension AdminPanelViewController: AdminPanelViewDelegate {
     func tapPlayers() {
-        print("create player")
+        let controller = NewCreatePlayerViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tapFinance() {
@@ -61,7 +62,8 @@ extension AdminPanelViewController: AdminPanelViewDelegate {
     }
     
     func tapCreateTeam() {
-        print("create team")
+        let controller = CreateTeamViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tapMakeMatch() {

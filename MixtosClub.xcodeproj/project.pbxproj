@@ -17,6 +17,8 @@
 		51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */; };
 		51082DA12AE5E015007557C1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 51082DA02AE5E015007557C1 /* Alamofire */; };
 		51082DA42AE5E050007557C1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082DA32AE5E050007557C1 /* Provider.swift */; };
+		512B06DC2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */; };
+		512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */; };
 		51707BE32AE5F42000722645 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE22AE5F42000722645 /* Players.swift */; };
 		51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */; };
 		51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */; };
@@ -48,6 +50,9 @@
 		51CDD8672B7A8B07005E59CB /* InformativeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD8662B7A8B07005E59CB /* InformativeSectionView.swift */; };
 		51CDD8692B7A8B42005E59CB /* AdministrationPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD8682B7A8B42005E59CB /* AdministrationPanelView.swift */; };
 		51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD86A2B7AC5A6005E59CB /* ScrollStackView.swift */; };
+		51DA10222BBA3FE0002C2605 /* CreateTeamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DA10212BBA3FE0002C2605 /* CreateTeamViewCell.swift */; };
+		51E101A52BAA1E5A00724FCE /* CreateTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E101A42BAA1E5A00724FCE /* CreateTeamView.swift */; };
+		51E101A72BAA1E8200724FCE /* CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E101A62BAA1E8200724FCE /* CreateTeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,8 @@
 		51082D982AE06DCC007557C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		51082D9B2AE07BFA007557C1 /* ActiveMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveMatchesViewController.swift; sourceTree = "<group>"; };
 		51082DA32AE5E050007557C1 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreatePlayerViewController.swift; sourceTree = "<group>"; };
+		512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
 		51707BE22AE5F42000722645 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
 		51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +100,9 @@
 		51CDD8662B7A8B07005E59CB /* InformativeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformativeSectionView.swift; sourceTree = "<group>"; };
 		51CDD8682B7A8B42005E59CB /* AdministrationPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationPanelView.swift; sourceTree = "<group>"; };
 		51CDD86A2B7AC5A6005E59CB /* ScrollStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollStackView.swift; sourceTree = "<group>"; };
+		51DA10212BBA3FE0002C2605 /* CreateTeamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewCell.swift; sourceTree = "<group>"; };
+		51E101A42BAA1E5A00724FCE /* CreateTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamView.swift; sourceTree = "<group>"; };
+		51E101A62BAA1E8200724FCE /* CreateTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +175,15 @@
 				51707BE22AE5F42000722645 /* Players.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		512B06DA2B9CCA7E0003EEDE /* CreatePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */,
+				512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */,
+			);
+			path = CreatePlayer;
 			sourceTree = "<group>";
 		};
 		51707BE42AE69D7900722645 /* Helper */ = {
@@ -252,6 +271,8 @@
 		51970B822B72B98C007A5D15 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				51E101A32BAA1E3000724FCE /* CreateTeams */,
+				512B06DA2B9CCA7E0003EEDE /* CreatePlayer */,
 				518C34B82B864D8900C0723D /* DeleteMatch */,
 				518C34B32B8632ED00C0723D /* CreateDeleteMatch */,
 				518C34AE2B8530D200C0723D /* MakeMatch */,
@@ -329,6 +350,24 @@
 				51CDD8682B7A8B42005E59CB /* AdministrationPanelView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		51DA10202BBA3F2C002C2605 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				51DA10212BBA3FE0002C2605 /* CreateTeamViewCell.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		51E101A32BAA1E3000724FCE /* CreateTeams */ = {
+			isa = PBXGroup;
+			children = (
+				51DA10202BBA3F2C002C2605 /* SubViews */,
+				51E101A42BAA1E5A00724FCE /* CreateTeamView.swift */,
+				51E101A62BAA1E8200724FCE /* CreateTeamViewController.swift */,
+			);
+			path = CreateTeams;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,6 +449,7 @@
 			files = (
 				51082D892AE051C2007557C1 /* LoginViewController.swift in Sources */,
 				51082D852AE051C2007557C1 /* AppDelegate.swift in Sources */,
+				512B06DC2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift in Sources */,
 				518C34B02B85310C00C0723D /* MakeMatchViewController.swift in Sources */,
 				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
 				518C34B72B8633B700C0723D /* CreateDeleteMatchView.swift in Sources */,
@@ -422,6 +462,7 @@
 				518C34B22B85316600C0723D /* MakeMatchView.swift in Sources */,
 				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
 				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
+				51DA10222BBA3FE0002C2605 /* CreateTeamViewCell.swift in Sources */,
 				51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */,
 				51CDD8692B7A8B42005E59CB /* AdministrationPanelView.swift in Sources */,
 				51CDD8632B7A8A85005E59CB /* MainMatchesView.swift in Sources */,
@@ -434,6 +475,7 @@
 				51970B872B72BA09007A5D15 /* TextsInTheApp.swift in Sources */,
 				51B9ADFD2B754F850056AFB8 /* ShowEquipmentView.swift in Sources */,
 				51082D9C2AE07BFA007557C1 /* ActiveMatchesViewController.swift in Sources */,
+				51E101A72BAA1E8200724FCE /* CreateTeamViewController.swift in Sources */,
 				51970B912B73F8EC007A5D15 /* CommonAttributes.swift in Sources */,
 				51970B852B72B9D5007A5D15 /* LoginView.swift in Sources */,
 				51CDD8672B7A8B07005E59CB /* InformativeSectionView.swift in Sources */,
@@ -441,8 +483,10 @@
 				51082DA42AE5E050007557C1 /* Provider.swift in Sources */,
 				51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */,
 				51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */,
+				512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */,
 				51CDD8652B7A8ACC005E59CB /* SecondaryMatchesView.swift in Sources */,
 				51970B962B747284007A5D15 /* ActiveMatchesView.swift in Sources */,
+				51E101A52BAA1E5A00724FCE /* CreateTeamView.swift in Sources */,
 				518C348B2B84032F00C0723D /* FirstAdminPanelView.swift in Sources */,
 				51082D992AE06DCC007557C1 /* HomeViewController.swift in Sources */,
 			);

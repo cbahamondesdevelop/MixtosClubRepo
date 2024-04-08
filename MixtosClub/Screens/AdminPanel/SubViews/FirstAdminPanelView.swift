@@ -57,7 +57,7 @@ class FirstAdminPanelView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = textAPP.matches
+        label.text = textAPP.teams
         label.textAlignment = .center
         
         button.addSubview(imageView)
