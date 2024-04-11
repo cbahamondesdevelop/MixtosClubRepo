@@ -11,7 +11,7 @@ import UIKit
 class NewHomeViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
-    //let provider = Provider(initialDate: "2023-01-01", finalDate: "2023-01-02")
+    let viewModel = FinanceModel(kindUser: kindUserType.standard.rawValue, numberOfMatches: 103, collectedMatch: 20, bills: 8000, isAvailable: 50000)
     
     private lazy var homeView: HomeView = {
         let view = HomeView(kindUser: kindUserType.admin.rawValue, activeSecondaryMatches: true)
@@ -52,8 +52,17 @@ extension NewHomeViewController {
 }
 
 extension NewHomeViewController: HomeViewDelegate {
+    func goPastMatches() {
+        print("go past matches")
+    }
+    
+    func goFinance() {
+        let controller = FinanceViewController(viewModel: viewModel)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func goAdminPanel() {
-        let controller = AdminPanelViewController()
+        let controller = AdminPanelViewController(/*viewModel: viewModel*/)
         navigationController?.pushViewController(controller, animated: true)
     }
     

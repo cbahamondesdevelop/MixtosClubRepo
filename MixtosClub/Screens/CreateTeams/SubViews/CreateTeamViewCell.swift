@@ -8,7 +8,14 @@
 import Foundation
 import UIKit
 
+protocol CreateTeamViewCellDelegate: AnyObject {
+    func pressSwitch() -> Int
+}
+
 class CreateTeamViewCell: UITableViewCell {
+    
+    private var counter = 0
+    var delegate: CreateTeamViewCellDelegate?
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -31,7 +38,6 @@ class CreateTeamViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         buildViewHierarchy()
         setupConstraints()
     }
@@ -44,27 +50,34 @@ class CreateTeamViewCell: UITableViewCell {
 
 extension CreateTeamViewCell {
     private func buildViewHierarchy() {
-        //[nameLabel, emojiLabel, colorSwitch].forEach(addSubview)
-        contentView.addSubview(nameLabel)
         contentView.addSubview(emojiLabel)
+        contentView.addSubview(nameLabel)
         contentView.addSubview(colorSwitch)
     }
     
     private func setupConstraints() {
-        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        
-        emojiLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
-        emojiLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        
-        colorSwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        colorSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        NSLayoutConstraint.activate([
+            emojiLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            emojiLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            nameLabel.leadingAnchor.constraint(equalTo: emojiLabel.trailingAnchor, constant: 10),
+            
+            colorSwitch.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            colorSwitch.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+        ])
     }
 }
 
 extension CreateTeamViewCell {
     @objc func switchChanged(sender: UISwitch) {
-        if sender.isOn {
+        counter = delegate?.pressSwitch() ?? 0
+        
+        if counter == 6 && sender.isOn != true {
+            sender.isEnabled = false
+        }
+        
+        if sender.isOn && counter <= 6 {
             contentView.backgroundColor = .black
             nameLabel.textColor = .white
             emojiLabel.textColor = .white

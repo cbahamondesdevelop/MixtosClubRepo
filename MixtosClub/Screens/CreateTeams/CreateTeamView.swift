@@ -13,8 +13,7 @@ class CreateTeamView: UIView {
     let textAPP = TextsInTheApp()
     var viewModel: String
     
-    var colorTeams: [String] = ["Equipo Negro ⚫️", "Equipo Blanco ⚪️"]
-    var people: [String] = ["Juan", "Pedro", "Marcos", "Matias", "Maria", "Rosa"]
+    var people: [String] = ["Juan", "Pedro", "Marcos", "Matias", "Maria", "Rosa", "Jhon", "Piter", "Jack", "Andrew", "Coralina", "Marta"]
     var loginUser: String?
     
     private lazy var titleLabel: UILabel = {
@@ -33,6 +32,17 @@ class CreateTeamView: UIView {
         table.dataSource = self
         table.delegate = self
         return table
+    }()
+    
+    private lazy var saveButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .purple
+        button.layer.cornerRadius = 5.0
+        button.isEnabled = true
+        button.setTitle(textAPP.save, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapSave), for: .touchUpInside)
+        return button
     }()
 
     required init?(coder: NSCoder) {
@@ -65,6 +75,7 @@ extension CreateTeamView {
     private func buildViewHierarchy() {
         addSubview(titleLabel)
         addSubview(playersTableView)
+        addSubview(saveButton)
     }
     
     private func setupConstraints() {
@@ -76,7 +87,12 @@ extension CreateTeamView {
             playersTableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             playersTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             playersTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            playersTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            playersTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            saveButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -60),
+            saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }
@@ -91,8 +107,41 @@ extension CreateTeamView: UITableViewDataSource, UITableViewDelegate {
         
         
         cell.nameLabel.text = people[indexPath.row]
-        cell.emojiLabel.text = "✌🏻"
+        cell.emojiLabel.text = "🚹"
+        cell.delegate = self
         
         return cell
+    }
+}
+
+extension CreateTeamView {
+    @objc
+    func didTapSave() {
+        print("Voy a guardar")
+    }
+    
+    func countSwitchesOn(in view: UIView) -> Int {
+        var count = 0
+        for subview in view.subviews {
+            
+            if let switchView = subview as? UISwitch {
+    
+                if switchView.isOn {
+                    count += 1
+                }
+            }
+
+            if subview.subviews.count > 0 {
+                count += countSwitchesOn(in: subview)
+            }
+        }
+        
+        return count
+    }
+}
+
+extension CreateTeamView: CreateTeamViewCellDelegate {
+    func pressSwitch() -> Int {
+        return countSwitchesOn(in: self)
     }
 }

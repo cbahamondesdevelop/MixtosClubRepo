@@ -8,9 +8,15 @@
 import Foundation
 import UIKit
 
+protocol InformativeSectionViewDelegate: AnyObject {
+    func goFinance()
+    func goPastMatches()
+}
+
 class InformativeSectionView: UIView {
     
     let textAPP = TextsInTheApp()
+    weak var delegate: InformativeSectionViewDelegate?
     
     private lazy var informativeLabel: UILabel = {
         let label = UILabel()
@@ -103,11 +109,11 @@ extension InformativeSectionView {
 extension InformativeSectionView {
     @objc
     func didTapPastMatches() {
-        print("didTapPastMatches")
+        delegate?.goPastMatches()
     }
     
     @objc
     func didTapFinances() {
-        print("presione didTapFinances")
+        delegate?.goFinance()
     }
 }

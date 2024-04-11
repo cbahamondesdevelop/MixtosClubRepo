@@ -11,6 +11,8 @@ import UIKit
 protocol HomeViewDelegate: AnyObject {
     func tapFirstMatch()
     func goAdminPanel()
+    func goFinance()
+    func goPastMatches()
 }
 
 class HomeView: UIView {
@@ -61,6 +63,7 @@ class HomeView: UIView {
     private lazy var informativeView: InformativeSectionView = {
         let view = InformativeSectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = self
         return view
     }()
     
@@ -191,7 +194,7 @@ extension HomeView {
     
     @objc
     func didTapFinances() {
-        print("presione boton 5")
+        delegate?.goFinance()
     }
     
     @objc
@@ -209,5 +212,15 @@ extension HomeView: MainMatchesViewDelegate {
 extension HomeView: AdministrationPanelViewDelegate {
     func adminPanel() {
         delegate?.goAdminPanel()
+    }
+}
+
+extension HomeView: InformativeSectionViewDelegate {
+    func goFinance() {
+        delegate?.goFinance()
+    }
+    
+    func goPastMatches() {
+        delegate?.goPastMatches()
     }
 }

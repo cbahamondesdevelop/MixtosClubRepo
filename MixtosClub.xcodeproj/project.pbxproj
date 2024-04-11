@@ -19,6 +19,9 @@
 		51082DA42AE5E050007557C1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082DA32AE5E050007557C1 /* Provider.swift */; };
 		512B06DC2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */; };
 		512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */; };
+		51379BB22BC72EC000C210A4 /* FinanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB12BC72EC000C210A4 /* FinanceModel.swift */; };
+		51458C512BC5CAC9002D9CE1 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */; };
+		51458C532BC5CB39002D9CE1 /* FinanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51458C522BC5CB39002D9CE1 /* FinanceView.swift */; };
 		51707BE32AE5F42000722645 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE22AE5F42000722645 /* Players.swift */; };
 		51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */; };
 		51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */; };
@@ -69,6 +72,9 @@
 		51082DA32AE5E050007557C1 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreatePlayerViewController.swift; sourceTree = "<group>"; };
 		512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
+		51379BB12BC72EC000C210A4 /* FinanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceModel.swift; sourceTree = "<group>"; };
+		51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
+		51458C522BC5CB39002D9CE1 /* FinanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceView.swift; sourceTree = "<group>"; };
 		51707BE22AE5F42000722645 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
 		51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				51707BE22AE5F42000722645 /* Players.swift */,
+				51379BB12BC72EC000C210A4 /* FinanceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +191,15 @@
 				512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */,
 			);
 			path = CreatePlayer;
+			sourceTree = "<group>";
+		};
+		51458C4F2BC5CA8F002D9CE1 /* Finance */ = {
+			isa = PBXGroup;
+			children = (
+				51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */,
+				51458C522BC5CB39002D9CE1 /* FinanceView.swift */,
+			);
+			path = Finance;
 			sourceTree = "<group>";
 		};
 		51707BE42AE69D7900722645 /* Helper */ = {
@@ -271,6 +287,7 @@
 		51970B822B72B98C007A5D15 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				51458C4F2BC5CA8F002D9CE1 /* Finance */,
 				51E101A32BAA1E3000724FCE /* CreateTeams */,
 				512B06DA2B9CCA7E0003EEDE /* CreatePlayer */,
 				518C34B82B864D8900C0723D /* DeleteMatch */,
@@ -454,6 +471,7 @@
 				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
 				518C34B72B8633B700C0723D /* CreateDeleteMatchView.swift in Sources */,
 				51970B942B74720D007A5D15 /* NewActiveMatchesViewController.swift in Sources */,
+				51458C532BC5CB39002D9CE1 /* FinanceView.swift in Sources */,
 				51970B8E2B731C62007A5D15 /* HomeView.swift in Sources */,
 				518C34892B8400A600C0723D /* AdminPanelView.swift in Sources */,
 				518C348D2B844F4700C0723D /* SecondAdminPanelView.swift in Sources */,
@@ -483,6 +501,8 @@
 				51082DA42AE5E050007557C1 /* Provider.swift in Sources */,
 				51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */,
 				51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */,
+				51379BB22BC72EC000C210A4 /* FinanceModel.swift in Sources */,
+				51458C512BC5CAC9002D9CE1 /* FinanceViewController.swift in Sources */,
 				512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */,
 				51CDD8652B7A8ACC005E59CB /* SecondaryMatchesView.swift in Sources */,
 				51970B962B747284007A5D15 /* ActiveMatchesView.swift in Sources */,

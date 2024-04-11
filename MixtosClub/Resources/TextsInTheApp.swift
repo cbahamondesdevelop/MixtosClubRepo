@@ -38,6 +38,10 @@ class TextsInTheApp {
     let matchesOptions = "Configuraciones de partido"
     let male = "Masculino"
     let female = "Femenino"
+    let numberOfMatches = "Cantidad de partidos jugados"
+    let collectedMatch = "Recaudo por partido:"
+    let bills = "Gastos:"
+    let isAvailable = "Queda disponible:"
     
     //MARK: Button
     let getIntoButton = "Ingresar"
@@ -54,6 +58,7 @@ class TextsInTheApp {
     let player = "Jugador"
     let finance = "Finanzas"
     let teams = "Equipos"
+    let save = "Guardar"
     
     //MARK: Title
     let titleHome = "Mixtos Club"
