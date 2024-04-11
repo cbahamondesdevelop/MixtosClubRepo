@@ -73,6 +73,7 @@ class TextsInTheApp {
     let makeMatch = "Crear partido"
     let createPlayer = "Crear jugador"
     let selectMatch = "Selecciona el partido que vas a eliminar"
+    let historicalMatches = "Historial de partidos"
     
     //MARK: Title Cell
     let titleLabelCell = "Titulo: "
