@@ -1,42 +1,42 @@
 //
-//  InformativeSectionView.swift
+//  FirstAdminPanelView.swift
 //  MixtosClub
 //
-//  Created by Cristian Bahamondes on 12-02-24.
+//  Created by Cristian Bahamondes on 19-02-24.
 //
 
 import Foundation
 import UIKit
 
-protocol InformativeSectionViewDelegate: AnyObject {
-    func goFinance()
-    func goPastMatches()
+protocol FirstAdminPanelViewDelegate: AnyObject {
+    func createTeam()
+    func makeMatch()
 }
 
-class InformativeSectionView: UIView {
+class FirstAdminPanelView: UIView {
     
     let textAPP = TextsInTheApp()
-    weak var delegate: InformativeSectionViewDelegate?
+    weak var delegate: FirstAdminPanelViewDelegate?
     
-    private lazy var informativeLabel: UILabel = {
+    private lazy var matchesOptionsLabel: UILabel = {
         let label = UILabel()
-        label.text = textAPP.informative
+        label.text = textAPP.matchesOptions
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 16.0)
         return label
     }()
     
-    private lazy var pastMatches: UIButton = {
+    private lazy var makeMatch: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
         
-        let imageView = UIImageView(image: UIImage(named: "pasado"))
+        let imageView = UIImageView(image: UIImage(named: "balontuerca"))
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Historial"
+        label.text = textAPP.matches
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -44,20 +44,20 @@ class InformativeSectionView: UIView {
         button.layer.borderWidth = 2.0
         button.layer.borderColor = UIColor.purple.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapPastMatches), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapMakeMatch), for: .touchUpInside)
         return button
     }()
     
-    private lazy var finances: UIButton = {
+    private lazy var createTeam: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor.white
         
-        let imageView = UIImageView(image: UIImage(named: "finanzas"))
+        let imageView = UIImageView(image: UIImage(named: "equipo"))
         imageView.contentMode = .scaleAspectFit
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "Finanzas"
+        label.text = textAPP.teams
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -65,7 +65,7 @@ class InformativeSectionView: UIView {
         button.layer.borderWidth = 2.0
         button.layer.borderColor = UIColor.purple.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapFinances), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapCreateTeam), for: .touchUpInside)
         return button
     }()
     
@@ -82,38 +82,38 @@ class InformativeSectionView: UIView {
     }
 }
 
-extension InformativeSectionView {
+extension FirstAdminPanelView {
     
     private func buildViewHierarchy() {
-        [informativeLabel, pastMatches, finances].forEach(addSubview)
+        [matchesOptionsLabel, makeMatch, createTeam].forEach(addSubview)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            informativeLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            informativeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            matchesOptionsLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            matchesOptionsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 
-            pastMatches.topAnchor.constraint(equalTo: informativeLabel.bottomAnchor, constant: 30),
-            pastMatches.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            pastMatches.widthAnchor.constraint(equalToConstant: 110),
-            pastMatches.heightAnchor.constraint(equalToConstant: 110),
+            makeMatch.topAnchor.constraint(equalTo: matchesOptionsLabel.bottomAnchor, constant: 30),
+            makeMatch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+            makeMatch.widthAnchor.constraint(equalToConstant: 110),
+            makeMatch.heightAnchor.constraint(equalToConstant: 110),
             
-            finances.topAnchor.constraint(equalTo: informativeLabel.bottomAnchor, constant: 30),
-            finances.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            finances.widthAnchor.constraint(equalToConstant: 110),
-            finances.heightAnchor.constraint(equalToConstant: 110),
+            createTeam.topAnchor.constraint(equalTo: matchesOptionsLabel.bottomAnchor, constant: 30),
+            createTeam.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+            createTeam.widthAnchor.constraint(equalToConstant: 110),
+            createTeam.heightAnchor.constraint(equalToConstant: 110),
         ])
     }
 }
 
-extension InformativeSectionView {
+extension FirstAdminPanelView {
     @objc
-    func didTapPastMatches() {
-        delegate?.goPastMatches()
+    func didTapMakeMatch() {
+        delegate?.makeMatch()
     }
     
     @objc
-    func didTapFinances() {
-        delegate?.goFinance()
+    func didTapCreateTeam() {
+        delegate?.createTeam()
     }
 }

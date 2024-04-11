@@ -23,7 +23,25 @@ class TextsInTheApp {
     let startDate = "Fecha inicio"
     let endDate = "Fecha final"
     let selectADate = "Selecciona una fecha"
-    
+    let courtPlace = "Lugar cancha"
+    let day = "Día"
+    let month = "Mes"
+    let year = "Año"
+    let genderPlayer = "Genero del jugador"
+    let matchTime = "Hora del partido"
+    let price = "Valor cancha"
+    let infoMakeMatch = "Informacion de partido"
+    let infoPlayer = "Informacion del jugador"
+    let saveInfo = "Guardar"
+    let createDelete = "Crear o eliminar partido"
+    let otherConfiguration = "Otras configuraciones"
+    let matchesOptions = "Configuraciones de partido"
+    let male = "Masculino"
+    let female = "Femenino"
+    let numberOfMatches = "Cantidad de partidos jugados"
+    let collectedMatch = "Recaudo por partido:"
+    let bills = "Gastos:"
+    let isAvailable = "Queda disponible:"
     
     //MARK: Button
     let getIntoButton = "Ingresar"
@@ -34,6 +52,13 @@ class TextsInTheApp {
     let seeTeams = "Ver equipos"
     let iPreferNotToParticipate = "Mejor no participo :("
     let back = "Volver"
+    let matches = "Partidos"
+    let create = "Crear"
+    let delete = "Eliminar"
+    let player = "Jugador"
+    let finance = "Finanzas"
+    let teams = "Equipos"
+    let save = "Guardar"
     
     //MARK: Title
     let titleHome = "Mixtos Club"
@@ -45,6 +70,9 @@ class TextsInTheApp {
     let activeMatches = "Partidos Activos"
     let informative = "Seccion informativa"
     let adminPanel = "Panel admin"
+    let makeMatch = "Crear partido"
+    let createPlayer = "Crear jugador"
+    let selectMatch = "Selecciona el partido que vas a eliminar"
     
     //MARK: Title Cell
     let titleLabelCell = "Titulo: "
