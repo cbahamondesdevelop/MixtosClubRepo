@@ -20,6 +20,8 @@
 		512B06DC2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */; };
 		512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */; };
 		51379BB22BC72EC000C210A4 /* FinanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB12BC72EC000C210A4 /* FinanceModel.swift */; };
+		51379BB52BC84C1F00C210A4 /* HistoricalMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */; };
+		51379BB72BC84CDE00C210A4 /* HistoricalMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */; };
 		51458C512BC5CAC9002D9CE1 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */; };
 		51458C532BC5CB39002D9CE1 /* FinanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51458C522BC5CB39002D9CE1 /* FinanceView.swift */; };
 		51707BE32AE5F42000722645 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE22AE5F42000722645 /* Players.swift */; };
@@ -73,6 +75,8 @@
 		512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreatePlayerViewController.swift; sourceTree = "<group>"; };
 		512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
 		51379BB12BC72EC000C210A4 /* FinanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceModel.swift; sourceTree = "<group>"; };
+		51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMatchesViewController.swift; sourceTree = "<group>"; };
+		51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMatchesView.swift; sourceTree = "<group>"; };
 		51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		51458C522BC5CB39002D9CE1 /* FinanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceView.swift; sourceTree = "<group>"; };
 		51707BE22AE5F42000722645 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
@@ -193,6 +197,15 @@
 			path = CreatePlayer;
 			sourceTree = "<group>";
 		};
+		51379BB32BC84BF700C210A4 /* HistoricalMatches */ = {
+			isa = PBXGroup;
+			children = (
+				51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */,
+				51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */,
+			);
+			path = HistoricalMatches;
+			sourceTree = "<group>";
+		};
 		51458C4F2BC5CA8F002D9CE1 /* Finance */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +300,7 @@
 		51970B822B72B98C007A5D15 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				51379BB32BC84BF700C210A4 /* HistoricalMatches */,
 				51458C4F2BC5CA8F002D9CE1 /* Finance */,
 				51E101A32BAA1E3000724FCE /* CreateTeams */,
 				512B06DA2B9CCA7E0003EEDE /* CreatePlayer */,
@@ -471,6 +485,7 @@
 				51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */,
 				518C34B72B8633B700C0723D /* CreateDeleteMatchView.swift in Sources */,
 				51970B942B74720D007A5D15 /* NewActiveMatchesViewController.swift in Sources */,
+				51379BB72BC84CDE00C210A4 /* HistoricalMatchesView.swift in Sources */,
 				51458C532BC5CB39002D9CE1 /* FinanceView.swift in Sources */,
 				51970B8E2B731C62007A5D15 /* HomeView.swift in Sources */,
 				518C34892B8400A600C0723D /* AdminPanelView.swift in Sources */,
@@ -482,6 +497,7 @@
 				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
 				51DA10222BBA3FE0002C2605 /* CreateTeamViewCell.swift in Sources */,
 				51970B9B2B747310007A5D15 /* TeamListView.swift in Sources */,
+				51379BB52BC84C1F00C210A4 /* HistoricalMatchesViewController.swift in Sources */,
 				51CDD8692B7A8B42005E59CB /* AdministrationPanelView.swift in Sources */,
 				51CDD8632B7A8A85005E59CB /* MainMatchesView.swift in Sources */,
 				51707BEC2AE95E9200722645 /* ShowTeamsViewController.swift in Sources */,

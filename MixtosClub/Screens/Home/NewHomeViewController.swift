@@ -53,7 +53,8 @@ extension NewHomeViewController {
 
 extension NewHomeViewController: HomeViewDelegate {
     func goPastMatches() {
-        print("go past matches")
+        let controller = HistoricalMatchesViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func goFinance() {
