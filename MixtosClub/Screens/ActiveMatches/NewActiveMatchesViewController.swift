@@ -11,9 +11,10 @@ import UIKit
 class NewActiveMatchesViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
+    let participateModel: ParticipateModel
     
     private lazy var activeMatchesView: ActiveMatchesView = {
-        let view = ActiveMatchesView(viewModel: "text")
+        let view = ActiveMatchesView(viewModel: participateModel)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         return view
@@ -32,6 +33,15 @@ class NewActiveMatchesViewController: UIViewController {
         let alert = UIAlertController(title: textAPP.titleAlert, message: textAPP.alertContent, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: textAPP.iAgree, style: UIAlertAction.Style.default, handler: nil))
         self.present(alert,animated: true, completion: nil)
+    }
+    
+    init(participateModel: ParticipateModel) {
+        self.participateModel = participateModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -52,6 +62,10 @@ extension NewActiveMatchesViewController {
 }
 
 extension NewActiveMatchesViewController: ActiveMatchesViewDelegate {
+    func participate(loggedUser: Players) {
+        print("participate: \(loggedUser)")
+    }
+    
     func seeTeams() {
         let controller = ShowEquipmentViewController()
         navigationController?.pushViewController(controller, animated: true)

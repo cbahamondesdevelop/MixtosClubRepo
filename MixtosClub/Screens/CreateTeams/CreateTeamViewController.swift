@@ -10,11 +10,12 @@ import UIKit
 
 class CreateTeamViewController: UIViewController {
     let textAPP = TextsInTheApp()
+    let people: [Players]
     
     private lazy var createTeamView: CreateTeamView = {
-        let view = CreateTeamView(viewModel: "")
+        let view = CreateTeamView(people: people, dateOfMatch: "15 Abril")
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.delegate = self
+        view.delegate = self
         return view
     }()
     
@@ -41,6 +42,15 @@ class CreateTeamViewController: UIViewController {
     func myDismissKeyboard() {
         view.endEditing(true)
     }
+    
+    init(people: [Players]) {
+        self.people = people
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension CreateTeamViewController {
@@ -58,10 +68,10 @@ extension CreateTeamViewController {
         ])
     }
 }
-/*
-extension CreateTeamViewController: CreatePlayerViewDelegate {
-    func tapSavePlayer() {
+
+extension CreateTeamViewController: CreateTeamViewDelegate {
+    func didTapSave() {
         self.navigationController?.popViewController(animated: true)
     }
 }
-*/
+

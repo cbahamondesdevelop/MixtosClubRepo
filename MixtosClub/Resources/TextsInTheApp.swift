@@ -15,6 +15,7 @@ class TextsInTheApp {
     let repeatPassword = "Repetir Clave"
     let name = "Nombre"
     let lastName = "Apellido"
+    let rutUser = "Rut"
     let email = "E-Mail"
     let search = "Buscar"
     let alertContent = "Usuario o contraseña no coinciden"

@@ -11,7 +11,7 @@ import UIKit
 class AdminPanelViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
-    let viewModel: FinanceModel = FinanceModel(kindUser: kindUserType.admin.rawValue, numberOfMatches: 103, collectedMatch: 3000, bills: 89000, isAvailable: 103000)
+    let viewModel: adminModel
     
     private lazy var adminView: AdminPanelView = {
         let view = AdminPanelView()
@@ -34,15 +34,15 @@ class AdminPanelViewController: UIViewController {
         alert.addAction(UIAlertAction(title: textAPP.iAgree, style: UIAlertAction.Style.default, handler: nil))
         self.present(alert,animated: true, completion: nil)
     }
-    /*
-    init(viewModel: FinanceModel) {
+    
+    init(viewModel: adminModel) {
         self.viewModel = viewModel
-        super.init()
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }*/
+    }
 }
 
 extension AdminPanelViewController {
@@ -68,12 +68,12 @@ extension AdminPanelViewController: AdminPanelViewDelegate {
     }
     
     func tapFinance() {
-        let controller = FinanceViewController(viewModel: viewModel)
+        let controller = FinanceViewController(viewModel: viewModel.infoFinance)
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func tapCreateTeam() {
-        let controller = CreateTeamViewController()
+        let controller = CreateTeamViewController(people: viewModel.infoPeople)
         navigationController?.pushViewController(controller, animated: true)
     }
     

@@ -22,8 +22,8 @@ struct Players: Decodable {
     var telefono: String
 }
 
-class Player {
-    static var shared = Player()
+class PlayerDeprecated {
+    static var shared = PlayerDeprecated()
     
     var apellido: String
     var email: String
@@ -52,3 +52,4 @@ class Player {
         self.telefono = telefono
     }
 }
+

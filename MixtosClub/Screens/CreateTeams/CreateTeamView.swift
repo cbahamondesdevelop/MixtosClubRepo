@@ -8,17 +8,21 @@
 import Foundation
 import UIKit
 
+protocol CreateTeamViewDelegate: AnyObject {
+    func didTapSave()
+}
+
 class CreateTeamView: UIView {
     
     let textAPP = TextsInTheApp()
-    var viewModel: String
-    
-    var people: [String] = ["Juan", "Pedro", "Marcos", "Matias", "Maria", "Rosa", "Jhon", "Piter", "Jack", "Andrew", "Coralina", "Marta"]
+    var people: [Players]
     var loginUser: String?
+    var dateOfMatch: String
+    weak var delegate: CreateTeamViewDelegate?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = textAPP.equipment + " " + "27 Febrero"
+        label.text = textAPP.equipment + " " + dateOfMatch
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 16)
@@ -49,15 +53,16 @@ class CreateTeamView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: String){
-        self.viewModel = viewModel
+    init(people: [Players], dateOfMatch: String){
+        self.people = people
+        self.dateOfMatch = dateOfMatch
         super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
         backgroundColor = .white
     }
     
-    private func matchIcon(genero: String) -> String {
+    private func getIcon(genero: String) -> String {
         var icon = String()
         
         if genero == "Masculino" {
@@ -103,11 +108,11 @@ extension CreateTeamView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! CreateTeamViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath) as! CreateTeamViewCell
         
         
-        cell.nameLabel.text = people[indexPath.row]
-        cell.emojiLabel.text = "🚹"
+        cell.nameLabel.text = people[indexPath.row].nombre
+        cell.emojiLabel.text = getIcon(genero: people[indexPath.row].genero)
         cell.delegate = self
         
         return cell
@@ -117,7 +122,7 @@ extension CreateTeamView: UITableViewDataSource, UITableViewDelegate {
 extension CreateTeamView {
     @objc
     func didTapSave() {
-        print("Voy a guardar")
+        delegate?.didTapSave()
     }
     
     func countSwitchesOn(in view: UIView) -> Int {

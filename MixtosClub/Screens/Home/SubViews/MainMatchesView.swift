@@ -10,11 +10,13 @@ import UIKit
 
 protocol MainMatchesViewDelegate: AnyObject {
     func tapFirstMatch()
+    func tapSecondMatch()
 }
 
 class MainMatchesView: UIView {
     
     let textAPP = TextsInTheApp()
+    private let viewModel: ActiveMatchesModel
     weak var delegate: MainMatchesViewDelegate?
     
     private lazy var activeMatchesLabel: UILabel = {
@@ -35,7 +37,7 @@ class MainMatchesView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "7 Feb"
+        label.text = viewModel.date1
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -56,7 +58,7 @@ class MainMatchesView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "10 Feb"
+        label.text = viewModel.date2
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -68,15 +70,15 @@ class MainMatchesView: UIView {
         return button
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: ActiveMatchesModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
         backgroundColor = .white
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -108,12 +110,11 @@ extension MainMatchesView {
 extension MainMatchesView {
     @objc
     func didTapFirstMatch() {
-        print("presione boton 1")
         delegate?.tapFirstMatch()
     }
     
     @objc
     func didTapSecondMatch() {
-        print("presione boton 2")
+        delegate?.tapSecondMatch()
     }
 }

@@ -22,8 +22,10 @@
 		51379BB22BC72EC000C210A4 /* FinanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB12BC72EC000C210A4 /* FinanceModel.swift */; };
 		51379BB52BC84C1F00C210A4 /* HistoricalMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */; };
 		51379BB72BC84CDE00C210A4 /* HistoricalMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */; };
+		51379BB92BC87EC500C210A4 /* ParticipateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB82BC87EC500C210A4 /* ParticipateModel.swift */; };
 		51458C512BC5CAC9002D9CE1 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */; };
 		51458C532BC5CB39002D9CE1 /* FinanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51458C522BC5CB39002D9CE1 /* FinanceView.swift */; };
+		515151922BCDAAE6003A1636 /* LittleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515151912BCDAAE6003A1636 /* LittleModel.swift */; };
 		51707BE32AE5F42000722645 /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE22AE5F42000722645 /* Players.swift */; };
 		51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */; };
 		51707BEA2AE6C9D900722645 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */; };
@@ -77,8 +79,10 @@
 		51379BB12BC72EC000C210A4 /* FinanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceModel.swift; sourceTree = "<group>"; };
 		51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMatchesViewController.swift; sourceTree = "<group>"; };
 		51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMatchesView.swift; sourceTree = "<group>"; };
+		51379BB82BC87EC500C210A4 /* ParticipateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipateModel.swift; sourceTree = "<group>"; };
 		51458C502BC5CAC9002D9CE1 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		51458C522BC5CB39002D9CE1 /* FinanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceView.swift; sourceTree = "<group>"; };
+		515151912BCDAAE6003A1636 /* LittleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleModel.swift; sourceTree = "<group>"; };
 		51707BE22AE5F42000722645 /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
 		51707BE52AE69DA300722645 /* DictionaryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRepresentable.swift; sourceTree = "<group>"; };
 		51707BE92AE6C9D900722645 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 			children = (
 				51707BE22AE5F42000722645 /* Players.swift */,
 				51379BB12BC72EC000C210A4 /* FinanceModel.swift */,
+				51379BB82BC87EC500C210A4 /* ParticipateModel.swift */,
+				515151912BCDAAE6003A1636 /* LittleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 				518C348D2B844F4700C0723D /* SecondAdminPanelView.swift in Sources */,
 				518C34BA2B864D9F00C0723D /* DeleteMatchViewController.swift in Sources */,
 				51B9ADFB2B754F150056AFB8 /* ShowEquipmentViewController.swift in Sources */,
+				515151922BCDAAE6003A1636 /* LittleModel.swift in Sources */,
 				518C34B22B85316600C0723D /* MakeMatchView.swift in Sources */,
 				51707BE62AE69DA300722645 /* DictionaryRepresentable.swift in Sources */,
 				51970B992B7472E4007A5D15 /* HeaderView.swift in Sources */,
@@ -518,6 +525,7 @@
 				51970B892B72CDCD007A5D15 /* NewLoginViewController.swift in Sources */,
 				51CDD86B2B7AC5A6005E59CB /* ScrollStackView.swift in Sources */,
 				51379BB22BC72EC000C210A4 /* FinanceModel.swift in Sources */,
+				51379BB92BC87EC500C210A4 /* ParticipateModel.swift in Sources */,
 				51458C512BC5CAC9002D9CE1 /* FinanceViewController.swift in Sources */,
 				512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */,
 				51CDD8652B7A8ACC005E59CB /* SecondaryMatchesView.swift in Sources */,

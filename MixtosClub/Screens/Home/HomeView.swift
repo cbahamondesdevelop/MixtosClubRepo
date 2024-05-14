@@ -10,6 +10,9 @@ import UIKit
 
 protocol HomeViewDelegate: AnyObject {
     func tapFirstMatch()
+    func tapSecondMatch()
+    func tapThirdMatch()
+    func tapFourthMatch()
     func goAdminPanel()
     func goFinance()
     func goPastMatches()
@@ -22,6 +25,7 @@ class HomeView: UIView {
     private var kindUser: String
     private var activeSecondaryMatches: Bool
     private var numberOfViews: Int
+    private var dateInfoModel: ActiveMatchesModel
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -48,14 +52,15 @@ class HomeView: UIView {
     }()
 
     private lazy var mainView: MainMatchesView = {
-        let view = MainMatchesView()
+        let view = MainMatchesView(viewModel: dateInfoModel)
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var secondaryView: SecondaryMatchesView = {
-        let view = SecondaryMatchesView()
+        let view = SecondaryMatchesView(viewModel: dateInfoModel)
+        view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -74,10 +79,11 @@ class HomeView: UIView {
         return view
     }()
  
-    init(kindUser: String, activeSecondaryMatches: Bool, numberOfViews: Int = 3) {
+    init(kindUser: String, activeSecondaryMatches: Bool, numberOfViews: Int = 3, dateInfoModel: ActiveMatchesModel) {
         self.kindUser = kindUser
         self.activeSecondaryMatches = activeSecondaryMatches
         self.numberOfViews = numberOfViews
+        self.dateInfoModel = dateInfoModel
         super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
@@ -145,7 +151,6 @@ extension HomeView {
             mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             mainView.heightAnchor.constraint(equalToConstant: 175),
             
-            //informativeView.topAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 10),
             informativeView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             informativeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             informativeView.heightAnchor.constraint(equalToConstant: 175)
@@ -181,31 +186,23 @@ extension HomeView {
     }
 }
 
-extension HomeView {
-    @objc
-    func didTapThirdMatch() {
-        print("presione boton 3")
+extension HomeView: MainMatchesViewDelegate {
+    func tapSecondMatch() {
+        delegate?.tapSecondMatch()
     }
     
-    @objc
-    func didTapPastMatches() {
-        print("presione boton 4")
-    }
-    
-    @objc
-    func didTapFinances() {
-        delegate?.goFinance()
-    }
-    
-    @objc
-    func didTapAdminPanel() {
-        print("presione boton 6")
+    func tapFirstMatch() {
+        delegate?.tapFirstMatch()
     }
 }
 
-extension HomeView: MainMatchesViewDelegate {
-    func tapFirstMatch() {
-        delegate?.tapFirstMatch()
+extension HomeView: SecondaryMatchesViewDelegate {
+    func tapThirdMatch() {
+        delegate?.tapThirdMatch()
+    }
+    
+    func tapFourthMatch() {
+        delegate?.tapFourthMatch()
     }
 }
 

@@ -86,14 +86,14 @@ class LoginViewController: UIViewController {
                 switch action.style{
                     case .default:
                     
-                    Player.shared.nombre = self.infoUser?.nombre ?? "Cristian"
-                    Player.shared.apellido = self.infoUser?.apellido ?? "Bahamondes"
-                    Player.shared.password = self.infoUser?.password ?? "123456"
-                    Player.shared.rut = self.infoUser?.rut ?? "173558309"
-                    Player.shared.email = self.infoUser?.email ?? "cristian@bhm.cl"
-                    Player.shared.genero = self.infoUser?.genero ?? "Masculino"
-                    Player.shared.perfil = self.infoUser?.perfil ?? "Admin"
-                    Player.shared.telefono = self.infoUser?.telefono ?? "123456"
+                    PlayerDeprecated.shared.nombre = self.infoUser?.nombre ?? "Cristian"
+                    PlayerDeprecated.shared.apellido = self.infoUser?.apellido ?? "Bahamondes"
+                    PlayerDeprecated.shared.password = self.infoUser?.password ?? "123456"
+                    PlayerDeprecated.shared.rut = self.infoUser?.rut ?? "173558309"
+                    PlayerDeprecated.shared.email = self.infoUser?.email ?? "cristian@bhm.cl"
+                    PlayerDeprecated.shared.genero = self.infoUser?.genero ?? "Masculino"
+                    PlayerDeprecated.shared.perfil = self.infoUser?.perfil ?? "Admin"
+                    PlayerDeprecated.shared.telefono = self.infoUser?.telefono ?? "123456"
                     
                     self.performSegue(withIdentifier: "segueToHome", sender: user.text)
                     

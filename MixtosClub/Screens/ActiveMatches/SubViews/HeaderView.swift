@@ -10,16 +10,18 @@ import UIKit
 
 protocol HeaderViewDelegate: AnyObject {
     func seeTeams()
+    func participate(loggedUser: Players)
 }
 
 class HeaderView: UIView {
     
     let textAPP = TextsInTheApp()
     weak var delegate: HeaderViewDelegate?
+    let viewModel: ParticipateModel
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "27 Febrero"
+        label.text = viewModel.dateMatch
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 16)
@@ -58,18 +60,19 @@ class HeaderView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 19)
         button.setTitle(textAPP.iPreferNotToParticipate, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(didTapiPreferNotToParticipate), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didTapNotToParticipate), for: .touchUpInside)
         return button
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: ParticipateModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
+        initialStateScreen()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -104,10 +107,43 @@ extension HeaderView {
 }
 
 extension HeaderView {
+    private func initialStateScreen() {
+        participateButton.isEnabled = true
+        iPreferNotToParticipateButton.isEnabled = false
+        
+        participateButton.backgroundColor = .systemGreen
+        iPreferNotToParticipateButton.backgroundColor = .darkGray
+        
+        validateMatch()
+    }
+    
+    private func pressParticipate() {
+        participateButton.isEnabled = false
+        iPreferNotToParticipateButton.isEnabled = true
+        
+        participateButton.backgroundColor = .darkGray
+        iPreferNotToParticipateButton.backgroundColor = .red
+        
+        validateMatch()
+    }
+    
+    private func validateMatch() {
+        if viewModel.matchAvailable {
+            seeTeamsButton.isEnabled = true
+            seeTeamsButton.backgroundColor = .systemMint
+        } else {
+            seeTeamsButton.isEnabled = false
+            seeTeamsButton.backgroundColor = .darkGray
+        }
+    }
+}
+
+extension HeaderView {
     
     @objc
     private func didTapParticipate() {
-        
+        pressParticipate()
+        delegate?.participate(loggedUser: viewModel.loggedUser)
     }
     
     @objc
@@ -116,7 +152,7 @@ extension HeaderView {
     }
     
     @objc
-    private func didTapiPreferNotToParticipate() {
-        
+    private func didTapNotToParticipate() {
+        initialStateScreen()
     }
 }
