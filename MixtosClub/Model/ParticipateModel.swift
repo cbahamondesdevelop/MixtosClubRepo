@@ -9,7 +9,7 @@ import Foundation
 
 struct ParticipateModel {
     var dateMatch: String
-    var matchAvailable: Bool
+    var teamAvailable: Bool
     var enrolledPlayers: [Players]
     var reservePlayers: [Players]
     var loggedUser: Players

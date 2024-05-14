@@ -73,28 +73,28 @@ extension NewHomeViewController {
 
 extension NewHomeViewController: HomeViewDelegate {
     func tapFirstMatch() {
-        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date1, matchAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
+        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date1, teamAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
         
         let controller = NewActiveMatchesViewController(participateModel: participateModel)
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func tapSecondMatch() {
-        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date2, matchAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
+        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date2, teamAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
         
         let controller = NewActiveMatchesViewController(participateModel: participateModel)
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func tapThirdMatch() {
-        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date3, matchAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
+        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date3, teamAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
         
         let controller = NewActiveMatchesViewController(participateModel: participateModel)
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func tapFourthMatch() {
-        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date4, matchAvailable: true, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
+        let participateModel = ParticipateModel(dateMatch: dateMatchesModel.date4, teamAvailable: false, enrolledPlayers: fakePeople, reservePlayers: fakePeople2, loggedUser: userLoggedIn)
         
         let controller = NewActiveMatchesViewController(participateModel: participateModel)
         navigationController?.pushViewController(controller, animated: true)

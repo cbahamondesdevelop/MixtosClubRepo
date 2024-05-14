@@ -11,7 +11,7 @@ struct DataResponse: Decodable {
     var data:[Players]
 }
 
-struct Players: Decodable {
+struct Players: Decodable, Equatable {
     var apellido: String
     var email: String
     var genero: String

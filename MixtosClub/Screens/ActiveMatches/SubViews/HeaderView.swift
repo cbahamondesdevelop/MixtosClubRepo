@@ -11,6 +11,7 @@ import UIKit
 protocol HeaderViewDelegate: AnyObject {
     func seeTeams()
     func participate(loggedUser: Players)
+    func iPreferNotToParticipate(loggedUser: Players)
 }
 
 class HeaderView: UIView {
@@ -128,7 +129,7 @@ extension HeaderView {
     }
     
     private func validateMatch() {
-        if viewModel.matchAvailable {
+        if viewModel.teamAvailable {
             seeTeamsButton.isEnabled = true
             seeTeamsButton.backgroundColor = .systemMint
         } else {
@@ -154,5 +155,6 @@ extension HeaderView {
     @objc
     private func didTapNotToParticipate() {
         initialStateScreen()
+        delegate?.iPreferNotToParticipate(loggedUser: viewModel.loggedUser)
     }
 }

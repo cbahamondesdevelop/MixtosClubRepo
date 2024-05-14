@@ -11,7 +11,7 @@ import UIKit
 class NewActiveMatchesViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
-    let participateModel: ParticipateModel
+    var participateModel: ParticipateModel
     
     private lazy var activeMatchesView: ActiveMatchesView = {
         let view = ActiveMatchesView(viewModel: participateModel)
@@ -62,8 +62,12 @@ extension NewActiveMatchesViewController {
 }
 
 extension NewActiveMatchesViewController: ActiveMatchesViewDelegate {
+    func iPreferNotToParticipate(loggedUser: Players) {
+        activeMatchesView.teamListView.removePlayer(player: loggedUser)
+    }
+    
     func participate(loggedUser: Players) {
-        print("participate: \(loggedUser)")
+        activeMatchesView.teamListView.addPlayer(player: loggedUser)
     }
     
     func seeTeams() {

@@ -11,6 +11,7 @@ import UIKit
 protocol ActiveMatchesViewDelegate: AnyObject {
     func seeTeams()
     func participate(loggedUser: Players)
+    func iPreferNotToParticipate(loggedUser: Players)
 }
 
 class ActiveMatchesView: UIView {
@@ -81,6 +82,10 @@ extension ActiveMatchesView {
 }
 
 extension ActiveMatchesView: HeaderViewDelegate {
+    func iPreferNotToParticipate(loggedUser: Players) {
+        delegate?.iPreferNotToParticipate(loggedUser: loggedUser)
+    }
+    
     func participate(loggedUser: Players) {
         delegate?.participate(loggedUser: loggedUser)
     }

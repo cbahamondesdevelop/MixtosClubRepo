@@ -66,6 +66,33 @@ class TeamListView: UIView {
         }
         registeredPlayersTableView.reloadData()
     }
+    
+    func removePlayer(player: Players) {
+        var enrolled = false
+        var reserve = false
+        var idEnrolled = 0
+        var idReserve = 0
+        
+        if let idEnroll = enrolledPlayers?.firstIndex(of: player) {
+            enrolled = true
+            idEnrolled = idEnroll
+        }
+        
+        if let idReserv = reserves?.firstIndex(of: player) {
+            reserve = true
+            idReserve = idReserv
+        }
+        
+        if enrolled && idEnrolled != 0 {
+            enrolledPlayers?.remove(at: idEnrolled)
+        }
+        
+        if reserve && idReserve != 0 {
+            reserves?.remove(at: idReserve)
+        }
+        
+        registeredPlayersTableView.reloadData()
+    }
 }
 
 extension TeamListView {
