@@ -19,6 +19,8 @@
 		51082DA42AE5E050007557C1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51082DA32AE5E050007557C1 /* Provider.swift */; };
 		512B06DC2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */; };
 		512B06DE2B9CCB0B0003EEDE /* CreatePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */; };
+		5130924F2BF53B090002F94C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5130924E2BF53B090002F94C /* FirebaseFirestoreSwift */; };
+		513092512BF558C80002F94C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 513092502BF558C80002F94C /* GoogleService-Info.plist */; };
 		51379BB22BC72EC000C210A4 /* FinanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB12BC72EC000C210A4 /* FinanceModel.swift */; };
 		51379BB52BC84C1F00C210A4 /* HistoricalMatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */; };
 		51379BB72BC84CDE00C210A4 /* HistoricalMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */; };
@@ -76,6 +78,7 @@
 		51082DA32AE5E050007557C1 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		512B06DB2B9CCA9B0003EEDE /* NewCreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCreatePlayerViewController.swift; sourceTree = "<group>"; };
 		512B06DD2B9CCB0B0003EEDE /* CreatePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerView.swift; sourceTree = "<group>"; };
+		513092502BF558C80002F94C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		51379BB12BC72EC000C210A4 /* FinanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceModel.swift; sourceTree = "<group>"; };
 		51379BB42BC84C1F00C210A4 /* HistoricalMatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMatchesViewController.swift; sourceTree = "<group>"; };
 		51379BB62BC84CDE00C210A4 /* HistoricalMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalMatchesView.swift; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51082DA12AE5E015007557C1 /* Alamofire in Frameworks */,
+				5130924F2BF53B090002F94C /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +154,7 @@
 		51082D832AE051C2007557C1 /* MixtosClub */ = {
 			isa = PBXGroup;
 			children = (
+				513092502BF558C80002F94C /* GoogleService-Info.plist */,
 				51970B8F2B73F8DB007A5D15 /* Common */,
 				51970B822B72B98C007A5D15 /* Screens */,
 				51970B812B72B97F007A5D15 /* Resources */,
@@ -425,6 +430,7 @@
 			name = MixtosClub;
 			packageProductDependencies = (
 				51082DA02AE5E015007557C1 /* Alamofire */,
+				5130924E2BF53B090002F94C /* FirebaseFirestoreSwift */,
 			);
 			productName = MixtosClub;
 			productReference = 51082D812AE051C2007557C1 /* MixtosClub.app */;
@@ -456,6 +462,7 @@
 			mainGroup = 51082D782AE051C2007557C1;
 			packageReferences = (
 				51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5130924D2BF5184D0002F94C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 51082D822AE051C2007557C1 /* Products */;
 			projectDirPath = "";
@@ -472,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51082D912AE051C5007557C1 /* LaunchScreen.storyboard in Resources */,
+				513092512BF558C80002F94C /* GoogleService-Info.plist in Resources */,
 				51082D8E2AE051C5007557C1 /* Assets.xcassets in Resources */,
 				51082D8C2AE051C2007557C1 /* Main.storyboard in Resources */,
 			);
@@ -764,6 +772,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5130924D2BF5184D0002F94C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.26.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -771,6 +787,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 51082D9F2AE5E015007557C1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		5130924E2BF53B090002F94C /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5130924D2BF5184D0002F94C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
