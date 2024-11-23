@@ -10,13 +10,15 @@ import UIKit
 
 protocol ActiveMatchesViewDelegate: AnyObject {
     func seeTeams()
+    func participate(loggedUser: Players)
+    func iPreferNotToParticipate(loggedUser: Players)
 }
 
 class ActiveMatchesView: UIView {
     
     let textAPP = TextsInTheApp()
     weak var delegate: ActiveMatchesViewDelegate?
-    var viewModel: String
+    var viewModel: ParticipateModel
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -28,20 +30,20 @@ class ActiveMatchesView: UIView {
     }()
     
     private lazy var headerView: HeaderView = {
-        let view = HeaderView()
+        let view = HeaderView(viewModel: viewModel)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         return view
     }()
     
     lazy var teamListView: TeamListView = {
-        let view = TeamListView(viewModel: "text")
+        let view = TeamListView(viewModel: viewModel)
         //view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
-    init(viewModel: String){
+    init(viewModel: ParticipateModel){
         self.viewModel = viewModel
         super.init(frame: .zero)
         buildViewHierarchy()
@@ -80,6 +82,14 @@ extension ActiveMatchesView {
 }
 
 extension ActiveMatchesView: HeaderViewDelegate {
+    func iPreferNotToParticipate(loggedUser: Players) {
+        delegate?.iPreferNotToParticipate(loggedUser: loggedUser)
+    }
+    
+    func participate(loggedUser: Players) {
+        delegate?.participate(loggedUser: loggedUser)
+    }
+    
     func seeTeams() {
         delegate?.seeTeams()
     }

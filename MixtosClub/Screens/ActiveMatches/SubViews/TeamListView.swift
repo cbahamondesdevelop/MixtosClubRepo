@@ -11,12 +11,10 @@ import UIKit
 class TeamListView: UIView {
     
     let textAPP = TextsInTheApp()
-    var viewModel: String
-    //weak var delegate: EarthQuakeListViewDelegate?
-    var players: [String]? = ["🚹 Juan", "🚹 Pedro", "🚹 Marcos", "🚺 Maria"]
-    var reserves: [String]? = ["🚺 Carolina", "🚹 Antonio", "🚹 Rodrigo"]
+    var viewModel: ParticipateModel
+    var enrolledPlayers: [Players]?
+    var reserves: [Players]?
     var sections: [String] = ["Inscritos", "Reservas"]
-    var loginUser: String?
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -39,8 +37,10 @@ class TeamListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewModel: String){
+    init(viewModel: ParticipateModel){
         self.viewModel = viewModel
+        self.enrolledPlayers = viewModel.enrolledPlayers
+        self.reserves = viewModel.reservePlayers
         super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
@@ -56,6 +56,42 @@ class TeamListView: UIView {
         }
         
         return icon
+    }
+    
+    func addPlayer(player: Players) {
+        if enrolledPlayers?.count ?? 0 >= 12 {
+            reserves?.append(player)
+        } else {
+            enrolledPlayers?.append(player)
+        }
+        registeredPlayersTableView.reloadData()
+    }
+    
+    func removePlayer(player: Players) {
+        var enrolled = false
+        var reserve = false
+        var idEnrolled = 0
+        var idReserve = 0
+        
+        if let idEnroll = enrolledPlayers?.firstIndex(of: player) {
+            enrolled = true
+            idEnrolled = idEnroll
+        }
+        
+        if let idReserv = reserves?.firstIndex(of: player) {
+            reserve = true
+            idReserve = idReserv
+        }
+        
+        if enrolled && idEnrolled != 0 {
+            enrolledPlayers?.remove(at: idEnrolled)
+        }
+        
+        if reserve && idReserve != 0 {
+            reserves?.remove(at: idReserve)
+        }
+        
+        registeredPlayersTableView.reloadData()
     }
 }
 
@@ -82,7 +118,7 @@ extension TeamListView {
 extension TeamListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if sections[section] == "Inscritos" {
-            return players?.count ?? textAPP.zeroDefault
+            return enrolledPlayers?.count ?? textAPP.zeroDefault
         } else {
             return reserves?.count ?? textAPP.zeroDefault
         }
@@ -104,9 +140,9 @@ extension TeamListView: UITableViewDataSource, UITableViewDelegate {
         }
         
         if indexPath.section == textAPP.zeroDefault {
-            cell?.textLabel?.text = players?[indexPath.row]
+            cell?.textLabel?.text = matchIcon(genero: enrolledPlayers?[indexPath.row].genero ?? "") + " " + (enrolledPlayers?[indexPath.row].nombre ?? "")
         } else if indexPath.section == 1 {
-            cell?.textLabel?.text = reserves?[indexPath.row]
+            cell?.textLabel?.text = matchIcon(genero: reserves?[indexPath.row].genero ?? "") + " " + (reserves?[indexPath.row].nombre ?? "")
         }
         
         guard let guardCell = cell else { return UITableViewCell(style: .default, reuseIdentifier: "CellIdentifier")}

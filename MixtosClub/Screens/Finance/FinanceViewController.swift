@@ -71,7 +71,22 @@ extension FinanceViewController {
 }
 
 extension FinanceViewController: FinanceViewDelegate {
+    func didTapSubtract(numberParam: Int) -> Int {
+        var numberReturn = numberParam
+        numberReturn -= 1
+        if numberReturn < 0 {
+            numberReturn = 0
+        }
+        return numberReturn
+    }
+    
+    func didTapAdd(numberParam: Int) -> Int {
+        var numberReturn = numberParam
+        numberReturn += 1
+        return numberReturn
+    }
+
     func didTapSave() {
-        print("tap save")
+        self.navigationController?.popViewController(animated: true)
     }
 }

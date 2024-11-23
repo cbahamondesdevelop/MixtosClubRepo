@@ -57,6 +57,17 @@ class CreatePlayerView: UIView {
         return textField
     }()
     
+    private lazy var rutTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = textAPP.rutUser
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        textField.layer.cornerRadius = 8.0
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.black.cgColor
+        return textField
+    }()
+    
     private lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = textAPP.email
@@ -174,6 +185,7 @@ extension CreatePlayerView {
          infoLabel,
          nameTextField,
          lastNameTextField,
+         rutTextField,
          emailTextField,
          passTextField,
          repeatPassTextField,
@@ -203,7 +215,11 @@ extension CreatePlayerView {
             lastNameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             lastNameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            emailTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 15),
+            rutTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 15),
+            rutTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            rutTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            
+            emailTextField.topAnchor.constraint(equalTo: rutTextField.bottomAnchor, constant: 15),
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             

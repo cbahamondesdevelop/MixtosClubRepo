@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Player.shared.nombre)
+        print(PlayerDeprecated.shared.nombre)
     }
     
     init(user: Players?) {
@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
     }
     
     private func validateUser() {
-        if Player.shared.perfil == "admin" {
+        if PlayerDeprecated.shared.perfil == "admin" {
             enterPanelAdmin.isEnabled = true
             enterPanelAdmin.backgroundColor = .systemPurple
         } else {

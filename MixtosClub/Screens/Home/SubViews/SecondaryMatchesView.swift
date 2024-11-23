@@ -8,9 +8,16 @@
 import Foundation
 import UIKit
 
+protocol SecondaryMatchesViewDelegate: AnyObject {
+    func tapThirdMatch()
+    func tapFourthMatch()
+}
+
 class SecondaryMatchesView: UIView {
     
     let textAPP = TextsInTheApp()
+    private let viewModel: ActiveMatchesModel
+    weak var delegate: SecondaryMatchesViewDelegate?
     
     private lazy var thirdMatch: UIButton = {
         let button = UIButton()
@@ -21,7 +28,7 @@ class SecondaryMatchesView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "15 Marz"
+        label.text = viewModel.date3
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -42,7 +49,7 @@ class SecondaryMatchesView: UIView {
         imageView.frame = CGRect(x: 10, y: 10, width: 80, height: 60)
         
         let label = UILabel(frame: CGRect(x: 10, y: 70, width: 80, height: 20))
-        label.text = "25 Marz"
+        label.text = viewModel.date4
         label.textAlignment = .center
         
         button.addSubview(imageView)
@@ -54,15 +61,15 @@ class SecondaryMatchesView: UIView {
         return button
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: ActiveMatchesModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
         buildViewHierarchy()
         setupConstraints()
         backgroundColor = .white
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -70,7 +77,10 @@ class SecondaryMatchesView: UIView {
 extension SecondaryMatchesView {
     
     private func buildViewHierarchy() {
-        [thirdMatch, fourthMatch].forEach(addSubview)
+        addSubview(thirdMatch)
+        if viewModel.date4 != String() {
+            addSubview(fourthMatch)
+        }
     }
     
     private func setupConstraints() {
@@ -78,24 +88,27 @@ extension SecondaryMatchesView {
             thirdMatch.topAnchor.constraint(equalTo: topAnchor, constant: 30),
             thirdMatch.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             thirdMatch.widthAnchor.constraint(equalToConstant: 110),
-            thirdMatch.heightAnchor.constraint(equalToConstant: 110),
-            
-            fourthMatch.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-            fourthMatch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            fourthMatch.widthAnchor.constraint(equalToConstant: 110),
-            fourthMatch.heightAnchor.constraint(equalToConstant: 110),
+            thirdMatch.heightAnchor.constraint(equalToConstant: 110)
         ])
+        if viewModel.date4 != String() {
+            NSLayoutConstraint.activate([
+                fourthMatch.topAnchor.constraint(equalTo: topAnchor, constant: 30),
+                fourthMatch.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
+                fourthMatch.widthAnchor.constraint(equalToConstant: 110),
+                fourthMatch.heightAnchor.constraint(equalToConstant: 110),
+            ])
+        }
     }
 }
 
 extension SecondaryMatchesView {
     @objc
     func didTapThirdMatch() {
-        print("delegate?.tapFirstMatch()")
+        delegate?.tapThirdMatch()
     }
     
     @objc
     func didTapFourthMatch() {
-        print("presione didTapFourthMatch")
+        delegate?.tapFourthMatch()
     }
 }

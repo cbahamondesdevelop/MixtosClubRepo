@@ -10,6 +10,8 @@ import UIKit
 
 protocol FinanceViewDelegate: AnyObject {
     func didTapSave()
+    func didTapAdd(numberParam: Int) -> Int
+    func didTapSubtract(numberParam: Int) -> Int
 }
 
 class FinanceView: UIView {
@@ -246,12 +248,16 @@ extension FinanceView {
 extension FinanceView {
     @objc
     func tapAddButton() {
-        print("add button")
+        guard let valueOfTextField = numberOfMatchesTextField.text else { return }
+        guard let number = delegate?.didTapAdd(numberParam: Int(valueOfTextField) ?? 0) else { return }
+        numberOfMatchesTextField.text = String(number)
     }
     
     @objc
     func tapSubtractButton() {
-        print("Subtract button")
+        guard let valueOfTextField = numberOfMatchesTextField.text else { return }
+        guard let number = delegate?.didTapSubtract(numberParam: Int(valueOfTextField) ?? 0) else { return }
+        numberOfMatchesTextField.text = String(number)
     }
     
     @objc

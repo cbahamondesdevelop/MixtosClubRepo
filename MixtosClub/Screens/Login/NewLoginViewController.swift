@@ -7,10 +7,12 @@
 
 import Foundation
 import UIKit
+import FirebaseCore
 
 class NewLoginViewController: UIViewController {
     
     let textAPP = TextsInTheApp()
+    //let fireStoreDB = Firestore.firestore()
     //let provider = Provider(initialDate: "2023-01-01", finalDate: "2023-01-02")
     
     private lazy var loginView: LoginView = {

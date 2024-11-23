@@ -52,9 +52,9 @@ class ActiveMatchesViewController: UIViewController {
     }
 
     @IBAction func tapDoNotParticipate(_ sender: Any) {
-        let icon = matchIcon(genero: Player.shared.genero)
+        let icon = matchIcon(genero: PlayerDeprecated.shared.genero)
         
-        let find = icon + " " + Player.shared.nombre
+        let find = icon + " " + PlayerDeprecated.shared.nombre
         let id = getIndex(nombre: find)
         removePlayer(posIndex: id)
         namePlayersTableView.reloadData()
@@ -65,9 +65,9 @@ class ActiveMatchesViewController: UIViewController {
     }
     
     @IBAction func tapParticipate(_ sender: Any) {
-        let icon = matchIcon(genero: Player.shared.genero)
+        let icon = matchIcon(genero: PlayerDeprecated.shared.genero)
         
-        players?.append(icon + " " + Player.shared.nombre)
+        players?.append(icon + " " + PlayerDeprecated.shared.nombre)
         namePlayersTableView.reloadData()
         
         btnParticiparControl.isEnabled = false
